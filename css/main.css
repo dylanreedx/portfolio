@@ -1045,20 +1045,52 @@ body {
   .navbar-desktop .logo {
     padding: 1em;
     font-family: 'Lobster';
+    color: #353535;
+    font-size: clamp(1.5em, 3vw, 2.5em);
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: 300ms;
+    transition: 300ms;
   }
   .navbar-desktop .logo a {
-    color: #353535;
     text-decoration: none;
-    font-size: clamp(1.2em, 3vw, 1.2vw);
+    color: #353535;
+  }
+  .navbar-desktop .logo::after {
+    content: '';
+    width: 50%;
+    position: absolute;
+    bottom: 0.7em;
+    height: 0.1em;
+    background-color: #FFAE03;
+    right: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  .navbar-desktop .logo:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  .navbar-desktop .logo:hover, .navbar-desktop .logo:focus {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
   }
   .navbar-desktop .nav-links-desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     font-weight: 600;
+    -webkit-transition: 300ms;
+    transition: 300ms;
   }
   .navbar-desktop .nav-links-desktop .nav-link {
     padding: 1em;
+    -webkit-transition: 300ms;
+    transition: 300ms;
   }
   .navbar-desktop .nav-links-desktop .nav-cta {
     margin: 0 1em;
@@ -1067,10 +1099,12 @@ body {
     border-radius: 30px;
     -webkit-transition: 300ms;
     transition: 300ms;
+    text-decoration: none;
   }
   .navbar-desktop .nav-links-desktop .nav-cta:hover, .navbar-desktop .nav-links-desktop .nav-cta:focus {
     background-color: #353535;
     color: #F9F8F8;
+    text-decoration: none;
   }
   .navbar-desktop .nav-links-desktop li {
     list-style-type: none;
@@ -1078,6 +1112,14 @@ body {
   .navbar-desktop .nav-links-desktop a {
     text-decoration: none;
     color: black;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+  }
+  .navbar-desktop .nav-links-desktop a:hover, .navbar-desktop .nav-links-desktop a:focus {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: #009DDC;
+    text-decoration: underline;
   }
   .hero {
     -webkit-box-orient: vertical;
