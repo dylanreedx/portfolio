@@ -110,7 +110,7 @@ const StyledLink = styled(Link)`
   font-weight: 600;
 
   &:nth-child(2) {
-    margin-left: 4em;
+    margin-left: 2em;
   }
 
   &:hover,

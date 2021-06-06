@@ -58,24 +58,29 @@ const StyledLink = styled(Link)`
   font-weight: 700;
   font-size: 2em;
   color: ${(p) => p.theme.colors.mainWhite};
-  padding: 0.5em 0;
+  margin: 0.5em 0;
   position: relative;
   transition: 300ms;
 
   &:hover {
     transform: translateX(5px);
     color: #cacaca;
+
+    &::after {
+      transform: scaleX(2);
+    }
   }
 
   &::after {
     content: "";
-    width: 100%;
-    height: 4px;
+    width: 4px;
+    height: 100%;
     border-radius: 1em;
     background-color: ${(p) => p.theme.colors.mainWhite};
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
+    transition: 300ms;
   }
 `
 
