@@ -11,28 +11,16 @@ const Socials = ({ isOpen }) => {
   return (
     <StyledSocials isOpen={isOpen}>
       <a href="https://www.linkedin.com/in/dylan-reed-210394142/">
-        <LinkedInIcon
-          fontSize="small"
-          style={isOpen ? { fontSize: 35 } : { fontSize: 15 }}
-        />
+        <LinkedInIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
       <a href="https://github.com/carbondesigned">
-        <GitHubIcon
-          fontSize="small"
-          style={isOpen ? { fontSize: 35 } : { fontSize: 15 }}
-        />
+        <GitHubIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
       <a href="https://www.instagram.com/carbondesigned/">
-        <InstagramIcon
-          fontSize="small"
-          style={isOpen ? { fontSize: 35 } : { fontSize: 15 }}
-        />
+        <InstagramIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
       <a href="https://twitter.com/carbondesigned">
-        <TwitterIcon
-          fontSize="small"
-          style={isOpen ? { fontSize: 35 } : { fontSize: 15 }}
-        />
+        <TwitterIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
     </StyledSocials>
   )

@@ -6,6 +6,18 @@
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar {
+  width: 0.75em;
+}
+html::-webkit-scrollbar-track {
+  background: white;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #353535;
+  border-radius: 1em;
+  border: 3px solid white;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #353535;

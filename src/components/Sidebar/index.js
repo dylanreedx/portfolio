@@ -1,5 +1,4 @@
 import React from "react"
-import CloseIcon from "@material-ui/icons/Close"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Socials from "../Socials"
@@ -30,6 +29,10 @@ const StyledSidebar = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 5;
+
+  a {
+    padding: 0 1em;
+  }
 
   .top-close {
     display: flex;
