@@ -29,6 +29,7 @@ const StyledProjectSection = styled(Section)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 10em 0;
 
   h2 {
     padding: 0.5em 0;

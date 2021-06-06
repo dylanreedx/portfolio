@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Socials from "../Socials"
 
+import waveSidebar from "../../Assets/images/wave2.svg"
+
 const index = ({ isOpen, toggle }) => {
   return (
     <StyledSidebar isOpen={isOpen} toggle={toggle}>
@@ -13,6 +15,7 @@ const index = ({ isOpen, toggle }) => {
         <StyledLink to="/contact">Contact</StyledLink>
       </StyledLinks>
       <Socials isOpen={isOpen} />
+      <img src={waveSidebar} alt="wave" className="wave" />
     </StyledSidebar>
   )
 }
@@ -29,6 +32,15 @@ const StyledSidebar = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 5;
+
+  .wave {
+    position: absolute;
+    bottom: ${({ isOpen }) => (isOpen ? "0" : "100%")};
+    left: 0;
+    opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+    z-index: -1;
+    pointer-events: none;
+  }
 
   a {
     padding: 0 1em;

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 
 import profileP from "../../Assets/images/avi.png"
+import heroWave from "../../Assets/images/wave.svg"
 import Button from "../../components/Button"
 
 const Hero = () => {
@@ -13,13 +14,14 @@ const Hero = () => {
         <img src={profileP} alt="Dylan Reed" className="profile-p" />
         <div className="headline">
           <h1>Hey</h1>
-          <h4>My name is Dylan and I am a front end engineer</h4>
+          <h4>My name is Dylan and I am a frontend developer</h4>
           <Button to="/contact" primary>
             Let's Work Together{" "}
             <ArrowMove fontSize="small" style={{ zIndex: "0" }} />
           </Button>
         </div>
       </div>
+      <img className="wave" src={heroWave} alt="background wave" />
     </StyledHeroSection>
   )
 }
@@ -51,6 +53,15 @@ const ArrowMove = styled(ArrowForwardIosIcon)`
 const StyledHeroSection = styled.section`
   width: 100%;
   padding: 5em 2em;
+
+  .wave {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
 
   .intro {
     display: flex;

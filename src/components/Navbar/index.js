@@ -6,7 +6,9 @@ import Socials from "../Socials"
 const index = ({ toggle, isOpen }) => {
   return (
     <StyledNav>
-      <StyledLogo className="logo">Dylan Reed</StyledLogo>
+      <StyledLogo isOpen={isOpen} className="logo">
+        Dylan Reed
+      </StyledLogo>
       <StyledLinks>
         <Socials />
         <StyledLink to="/">Home</StyledLink>
@@ -53,7 +55,10 @@ const Anim = keyframes`
 
 const StyledLogo = styled.div`
   font-weight: 800;
-  font-size: 1.625em;
+  font-size: 2em;
+  font-family: "Lobster", cursive;
+  z-index: 10;
+  color: ${({ isOpen }) => (isOpen ? "#fff" : "#353535")};
 `
 
 const StyledHamburger = styled.div`
