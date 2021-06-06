@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import Project from "../../components/Project"
 import { recentProject1, recentProject2 } from "../../projects"
+import { Section } from "../../styles"
 
 const RecentProjectsSection = () => {
   return (
@@ -22,26 +23,12 @@ const RecentProjectsSection = () => {
   )
 }
 
-const StyledProjectSection = styled.section`
+const StyledProjectSection = styled(Section)`
   padding: 1em;
-  margin: 0 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  @media only screen and (min-width: 1040px) {
-    margin: 0 10em;
-  }
-  @media only screen and (min-width: 1280px) {
-    margin: 0 15em;
-  }
-  @media only screen and (min-width: 1500px) {
-    margin: 0 22em;
-  }
-  @media only screen and (min-width: 1920px) {
-    margin: 0 35em;
-  }
 
   h2 {
     padding: 0.5em 0;
