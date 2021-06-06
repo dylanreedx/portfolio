@@ -1,6 +1,7 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { Link } from "react-router-dom"
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 
 import profileP from "../../Assets/images/avi.png"
 import Button from "../../components/Button"
@@ -14,13 +15,38 @@ const Hero = () => {
           <h1>Hey</h1>
           <h4>My name is Dylan and I am a front end engineer</h4>
           <Button to="/contact" primary>
-            Let's Work Together
+            Let's Work Together{" "}
+            <ArrowMove fontSize="small" style={{ zIndex: "0" }} />
           </Button>
         </div>
       </div>
     </StyledHeroSection>
   )
 }
+
+const ArrowAnim = keyframes`
+  0% {
+    transform: translateX(5px);
+  }
+  20% {
+    transform: translateX(8px)
+  }
+  60% {
+    transform: translateX(2px);
+    
+  }
+  80% {
+    transform: translateX(8px);
+    
+  }
+  100% {
+    transform: translateX(5px);
+  }
+`
+
+const ArrowMove = styled(ArrowForwardIosIcon)`
+  animation: ${ArrowAnim} infinite 2s;
+`
 
 const StyledHeroSection = styled.section`
   width: 100%;
@@ -59,14 +85,20 @@ const StyledHeroSection = styled.section`
 
     .headline {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1em;
 
       @media only screen and (min-width: 768px) {
         text-align: left;
         padding: 0 2em;
+        align-items: flex-start;
       }
 
       h1 {
         font-size: clamp(4em, 3vw, 6em);
+        width: 100%;
       }
 
       h4 {
