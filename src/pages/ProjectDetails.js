@@ -217,7 +217,7 @@ const StyledIntro = styled(motion.div)`
 `
 
 const StyledDetails = styled(motion.section)`
-  padding: 6em 2em;
+  padding: 0 1em;
 
   @media screen and (min-width: 768px) {
     margin: 0 2em;
@@ -250,6 +250,7 @@ const StyledTech = styled(motion.section)`
   display: flex;
   flex-direction: column;
   margin: 4em 0;
+  width: 100%;
 
   .main {
     width: 100%;
@@ -280,13 +281,12 @@ const StyledFeatures = styled(motion.section)`
 const StyledFeatureMockup = styled(motion.div)`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 5em 0;
   gap: 1em;
 
   .features-mockup {
     max-width: 100%;
-    max-height: 50vh;
     object-fit: cover;
   }
 `
