@@ -8,7 +8,7 @@ import headerBgLg from "../../Assets/images/header-bg-lg.svg"
 import Button from "../../components/Button"
 import { Section } from "../../styles"
 
-const index = ({ form }) => {
+const index = ({ children }) => {
   return (
     <StyledContact
       initial="hidden"
@@ -32,7 +32,8 @@ const index = ({ form }) => {
             </div>
           </div>
           <StyledForm className="form">
-            <form
+            {children}
+            {/* <form
               name="contact"
               className="form"
               method="POST"
@@ -74,7 +75,7 @@ const index = ({ form }) => {
                   Return back home
                 </Button>
               </SubmitBtn>
-            </form>
+            </form> */}
           </StyledForm>
         </div>
       </StyledCard>
