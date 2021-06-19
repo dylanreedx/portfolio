@@ -9,10 +9,18 @@ const index = ({ isOpen, toggle }) => {
   return (
     <StyledSidebar isOpen={isOpen} toggle={toggle}>
       <StyledLinks>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/portfolio">Portfolio</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink onClick={toggle} to="/">
+          Home
+        </StyledLink>
+        <StyledLink onClick={toggle} to="/portfolio">
+          Portfolio
+        </StyledLink>
+        <StyledLink onClick={toggle} to="/about">
+          About
+        </StyledLink>
+        <StyledLink onClick={toggle} to="/contact">
+          Contact
+        </StyledLink>
       </StyledLinks>
       <Socials isOpen={isOpen} />
       <img src={waveSidebar} alt="wave" className="wave" />

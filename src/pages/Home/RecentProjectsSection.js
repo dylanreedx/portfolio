@@ -2,44 +2,66 @@ import React from "react"
 import styled from "styled-components"
 
 import Project from "../../components/Project"
-import { recentProject1, recentProject2 } from "../../projects"
+import {
+  gameLibraryApp,
+  musicPlayerApp,
+  recentProject1,
+  recentProject2,
+} from "../../projects"
 import { Section } from "../../styles"
+
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
+import Button from "../../components/Button"
+import { pageAnimation } from "../../animation"
 
 const RecentProjectsSection = () => {
   return (
-    <StyledProjectSection>
+    <StyledProjectSection
+      initial="hidden"
+      variants={pageAnimation}
+      animate="show"
+      className="intro"
+    >
       <div className="title">
-        <h2>Recent Projects</h2>
-        <p className="desc">
-          Here are a few of my recent projects. I’ve been learning and gaining
-          expirence with both personal and client based projects.
-        </p>
+        <h2 className="section-title">Recent Projects</h2>
+        <Button style={{ padding: "0" }} to="/portfolio">
+          View All Work <ArrowForwardIosIcon />
+        </Button>
       </div>
       <div className="projects">
-        <Project {...recentProject1} />
-        <Project {...recentProject2} />
+        <Project {...recentProject1} url={"/portfolio/artist-page"} />
+        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
+        <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
       </div>
     </StyledProjectSection>
   )
 }
 
 const StyledProjectSection = styled(Section)`
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10em 0;
+  margin: 4em 0;
 
-  h2 {
+  .title {
     padding: 0.5em 0;
+    width: 100%;
+    font-size: 1.625em;
+    text-transform: uppercase;
+    color: ${(p) => p.theme.colors.midGray};
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2em;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    padding: 2em 0;
   }
 `
 

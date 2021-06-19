@@ -3,12 +3,12 @@ import styled, { keyframes } from "styled-components"
 import { Link } from "react-router-dom"
 import Socials from "../Socials"
 
+import logo from "../../Assets/images/carbondesigned_logo01_transparent_black.svg"
+
 const index = ({ toggle, isOpen }) => {
   return (
     <StyledNav>
-      <StyledLogo isOpen={isOpen} className="logo">
-        Dylan Reed
-      </StyledLogo>
+      <img className="logo" src={logo} alt="avi" />
       <StyledLinks>
         <Socials />
         <StyledLink to="/">Home</StyledLink>
@@ -32,6 +32,14 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   padding: 2em 2em;
   font-size: 0.9em;
+
+  .logo {
+    max-width: 35%;
+
+    @media screen and (min-width: 768px) {
+      max-width: 10%;
+    }
+  }
 `
 const Anim = keyframes`
   0% {
@@ -51,14 +59,6 @@ const Anim = keyframes`
   100% {
     transform: translateX(-10px) scaleX(1);
   }
-`
-
-const StyledLogo = styled.div`
-  font-weight: 800;
-  font-size: 2em;
-  font-family: "Lobster", cursive;
-  z-index: 10;
-  color: ${({ isOpen }) => (isOpen ? "#fff" : "#353535")};
 `
 
 const StyledHamburger = styled.div`

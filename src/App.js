@@ -1,14 +1,21 @@
 import React, { useState } from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import Theme from "./Theme"
+
+import { AnimatePresence } from "framer-motion"
 
 // Components
 import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
+import Footer from "./components/Footer"
 
 //Pages
 import Home from "./pages/Home"
+import Portfolio from "./pages/Portfolio"
+import PortfolioDetails from "./pages/ProjectDetails"
+import AboutPage from "./pages/AboutPage"
+import Contact from "./pages/Contact"
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,11 +26,30 @@ function App() {
   return (
     <div className="app">
       <Theme>
-        <Router>
-          <Sidebar toggle={toggle} isOpen={isOpen} />
-          <Navbar toggle={toggle} isOpen={isOpen} />
-          <Home />
-        </Router>
+        <AnimatePresence exitBeforeEnter>
+          <Router>
+            <Sidebar toggle={toggle} isOpen={isOpen} />
+            <Navbar toggle={toggle} isOpen={isOpen} />
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/portfolio" exact>
+                <Portfolio />
+              </Route>
+              <Route path="/portfolio/:id">
+                <PortfolioDetails />
+              </Route>
+              <Route path="/about">
+                <AboutPage />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+            </Switch>
+            <Footer />
+          </Router>
+        </AnimatePresence>
       </Theme>
     </div>
   )
