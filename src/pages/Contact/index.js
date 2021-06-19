@@ -32,7 +32,12 @@ const index = () => {
             </div>
           </div>
           <StyledForm className="form" method="POST" data-netlify="true">
-            <form action="" className="form">
+            <form
+              name="contact"
+              className="form"
+              method="POST"
+              data-netlify="true"
+            >
               <input
                 type="text"
                 id="name"
