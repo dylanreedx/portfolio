@@ -218,7 +218,10 @@ const StyledIntro = styled(motion.div)`
 
 const StyledDetails = styled(motion.section)`
   padding: 6em 2em;
-  margin: 0 2em;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 2em;
+  }
 
   h2 {
     position: relative;
