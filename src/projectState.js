@@ -145,13 +145,13 @@ export const ProjectState = () => {
         design: {
           title: "Design",
           p1:
-            "The design is simple and intuitive, presenting a visual of the individual songs, time, and the controls.",
+            "The design is very minimal for the reason of efficiency to find proper information about any games. The design of how the information is layed out is efficient.",
         },
       },
       story: {
         title: "01 Story Behind",
         p1:
-          "This app was created to start getting into the React environment. I helped with a lot of use cases, of useState to update many of the elements, such as the controls, the specific and current song, etc.",
+          "This project started the learning curve of Redux to manage state between many components while working with APIs. State management is all throughout of the project.",
       },
       features: {
         featuresMockup: musicAppMockup2,
