@@ -46,52 +46,7 @@ function App() {
                 <AboutPage />
               </Route>
               <Route path="/contact">
-                <Contact>
-                  <form
-                    name="contact"
-                    className="form"
-                    method="POST"
-                    data-netlify="true"
-                    onSubmit="submit"
-                  >
-                    {" "}
-                    <input type="hidden" name="form-name" value="contact" />
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Name"
-                      required
-                    />
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      required
-                    />
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      placeholder="Subject"
-                    />
-                    <textarea
-                      id="content"
-                      name="content"
-                      placeholder="Content"
-                      required
-                    />
-                    <SubmitBtn>
-                      <button type="submit" className="submit">
-                        Send
-                      </button>
-                      <Button to={"/"} style={{ padding: "0" }}>
-                        Return back home
-                      </Button>
-                    </SubmitBtn>{" "}
-                  </form>
-                </Contact>
+                <Contact />
               </Route>
             </Switch>
             <Footer />

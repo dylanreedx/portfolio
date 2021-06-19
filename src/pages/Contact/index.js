@@ -32,13 +32,13 @@ const index = ({ children }) => {
             </div>
           </div>
           <StyledForm className="form">
-            {children}
-            {/* <form
+            <form
               name="contact"
               className="form"
               method="POST"
               data-netlify="true"
               onSubmit="submit"
+              netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="contact" />
               <input
@@ -75,7 +75,7 @@ const index = ({ children }) => {
                   Return back home
                 </Button>
               </SubmitBtn>
-            </form> */}
+            </form>
           </StyledForm>
         </div>
       </StyledCard>
