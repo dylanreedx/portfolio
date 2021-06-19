@@ -4,16 +4,16 @@ import "./index.css"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 
-;<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name" />
-  <input type="text" name="email" />
-  <input type="text" name="subject" />
-  <textarea name="content" />
-</form>
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="content" />
+    </form>
   </React.StrictMode>,
   document.getElementById("root")
 )
