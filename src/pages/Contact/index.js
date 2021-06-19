@@ -42,7 +42,7 @@ const index = ({ children }) => {
                 required
               />
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder="Email"
