@@ -48,7 +48,7 @@ const StyledProject = styled(motion.div)`
     background: rgb(239, 239, 239);
     background: linear-gradient(
       180deg,
-      rgba(239, 239, 239, 1) 0%,
+      rgba(239, 239, 239, 0.5) 0%,
       rgba(0, 0, 0, 0) 25%
     );
     height: 100%;
