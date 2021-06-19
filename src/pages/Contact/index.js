@@ -66,15 +66,15 @@ const index = () => {
                 placeholder="Content"
                 required
               />
+              <SubmitBtn>
+                <button type="submit" className="submit">
+                  Send
+                </button>
+                <Button to={"/"} style={{ padding: "0" }}>
+                  Return back home
+                </Button>
+              </SubmitBtn>
             </form>
-            <SubmitBtn>
-              <button type="submit" className="submit">
-                Send
-              </button>
-              <Button to={"/"} style={{ padding: "0" }}>
-                Return back home
-              </Button>
-            </SubmitBtn>
           </StyledForm>
         </div>
       </StyledCard>
