@@ -36,7 +36,8 @@ const index = () => {
               name="contact-form"
               className="form"
               method="POST"
-              // data-netlify="true"
+              data-netlify="true"
+              onSubmit="submit"
             >
               <input type="hidden" name="form-name" value="contact-form" />
               <input
@@ -65,11 +66,15 @@ const index = () => {
                 placeholder="Content"
                 required
               />
-              <input className="submit" type="submit" />
+            </form>
+            <SubmitBtn>
+              <button type="submit" className="submit">
+                Send
+              </button>
               <Button to={"/"} style={{ padding: "0" }}>
                 Return back home
               </Button>
-            </form>
+            </SubmitBtn>
           </StyledForm>
         </div>
       </StyledCard>
@@ -190,6 +195,33 @@ const StyledForm = styled.div`
           0 100px 80px rgba(0, 163, 228, 0.2);
         background: #008ac0;
       }
+    }
+  }
+`
+
+const SubmitBtn = styled.div`
+  .submit {
+    padding: 1em 2em;
+    background: ${(p) => p.theme.colors.accBlue};
+    color: #fff;
+    outline: 0;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 300ms;
+    font-weight: 700;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.051),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.073), 0 12.5px 10px rgba(0, 0, 0, 0.09),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.107),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.129),
+        0 100px 80px rgba(0, 163, 228, 0.2);
+      background: #008ac0;
     }
   }
 `
