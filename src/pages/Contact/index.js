@@ -33,13 +33,13 @@ const index = () => {
           </div>
           <StyledForm className="form">
             <form
-              name="contact-form"
+              name="contact"
               className="form"
               method="POST"
-              netlify
+              data-netlify="true"
               onSubmit="submit"
             >
-              <input type="hidden" name="form-name" value="contact-form" />
+              <input type="hidden" name="form-name" value="contact" />
               <input
                 type="text"
                 id="name"
