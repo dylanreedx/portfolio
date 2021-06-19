@@ -108,8 +108,11 @@ const StyledContactHeader = styled.div`
   height: 100%;
   background-position: center;
   background-size: cover;
-  display: grid;
-  place-items: center;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1.5;
 
   @media only screen and (min-width: 1040px) {
