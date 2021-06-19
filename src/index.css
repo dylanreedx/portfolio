@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html::-webkit-scrollbar {
   width: 0.75em;
 }
@@ -22,5 +26,4 @@ body {
   font-family: "Poppins", sans-serif;
   color: #353535;
   line-height: 1.75;
-  overflow-x: hidden;
 }
