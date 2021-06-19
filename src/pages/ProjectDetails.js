@@ -142,7 +142,6 @@ const StyledHeader = styled(motion.div)`
   width: 100%;
   height: 75vh;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 
@@ -159,6 +158,7 @@ const StyledHeader = styled(motion.div)`
   @media screen and (min-width: 768px) {
     flex-direction: row-reverse;
     flex: 0.5;
+    overflow: hidden;
   }
 `
 
