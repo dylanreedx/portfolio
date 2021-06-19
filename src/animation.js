@@ -61,7 +61,7 @@ export const slideLeftAnim = {
     transition: {
       ease: "easeOut",
       duration: 1,
-      delay: 1,
+      delay: 0.75,
     },
   },
 }

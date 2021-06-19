@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 
 // Animations
 
-import { pageAnimation } from "../../animation"
+import { pageAnimation, slideLeftAnim } from "../../animation"
 
 import blobAvi from "../../Assets/images/blob-avi.png"
 import heroWave from "../../Assets/images/wave.svg"
@@ -23,20 +23,30 @@ const Hero = () => {
       >
         <img src={blobAvi} alt="Dylan Reed" className="profile-p" />
         <div className="hero-main">
-          <div className="headline">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={slideLeftAnim}
+            className="headline"
+          >
             <h2>Frontend Developer</h2>
             <h1>
               My name is Dylan. I create a great user expirence through
               websites.
             </h1>
-          </div>
-          <div className="buttons">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={slideLeftAnim}
+            className="buttons"
+          >
             <Button to="/contact" primary>
               Let's Work Together
               <ArrowMove fontSize="small" style={{ zIndex: "0" }} />
             </Button>
             <Button to="/portfolio">View Work</Button>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
       <img className="wave" src={heroWave} alt="background wave" />
