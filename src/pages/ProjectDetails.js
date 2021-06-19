@@ -68,7 +68,7 @@ const ProjectDetails = ({ light }) => {
               </div>
             </StyledIntro>
           </StyledHeader>
-          <StyledDetails variants={fade} animate={controls} ref={element}>
+          <StyledDetails>
             <StyledTech
               variants={fade}
               animate={controls}
