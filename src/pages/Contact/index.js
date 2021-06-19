@@ -8,7 +8,7 @@ import headerBgLg from "../../Assets/images/header-bg-lg.svg"
 import Button from "../../components/Button"
 import { Section } from "../../styles"
 
-const index = () => {
+const index = ({ form }) => {
   return (
     <StyledContact
       initial="hidden"
