@@ -31,8 +31,8 @@ const Hero = () => {
           >
             <h2>Frontend Developer</h2>
             <h1>
-              My name is Dylan. I create a great user expirence through
-              websites.
+              My name is Dylan. I am a frontend developer and I create a great
+              user experience through the web.
             </h1>
           </motion.div>
           <motion.div
