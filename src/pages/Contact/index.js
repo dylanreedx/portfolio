@@ -31,7 +31,7 @@ const index = () => {
               <p>Let's Work together! Contact me for any inquiries.</p>
             </div>
           </div>
-          <StyledForm className="form" method="POST" data-netlify="true">
+          <StyledForm className="form">
             <form
               name="contact"
               className="form"
@@ -64,7 +64,7 @@ const index = () => {
                 placeholder="Content"
                 required
               />
-              <button className="submit">Send</button>
+              <input className="submit" type="submit" />
               <Button to={"/"} style={{ padding: "0" }}>
                 Return back home
               </Button>
