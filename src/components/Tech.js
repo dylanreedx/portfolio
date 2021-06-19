@@ -43,9 +43,9 @@ const StyledTechComp = styled(motion.div)`
     width: 100%;
     background: rgb(239, 239, 239);
     background: linear-gradient(
-      0deg,
+      180deg,
       rgba(239, 239, 239, 1) 0%,
-      rgba(0, 0, 0, 0) 75%
+      rgba(0, 0, 0, 0) 25%
     );
     height: 100%;
     position: absolute;
@@ -56,6 +56,22 @@ const StyledTechComp = styled(motion.div)`
 
   @media screen and (min-width: 768px) {
     width: 50%;
+
+    &::after {
+      content: "";
+      width: 100%;
+      background: rgb(239, 239, 239);
+      background: linear-gradient(
+        0deg,
+        rgba(239, 239, 239, 1) 0%,
+        rgba(0, 0, 0, 0) 50%
+      );
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
   }
 
   &:nth-child(odd) {
