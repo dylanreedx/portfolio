@@ -31,15 +31,8 @@ const index = ({ children }) => {
               <p>Let's Work together! Contact me for any inquiries.</p>
             </div>
           </div>
-          <StyledForm className="form">
-            <form
-              name="contact"
-              className="form"
-              method="POST"
-              data-netlify="true"
-              onSubmit="submit"
-              netlify-honeypot="bot-field"
-            >
+          <StyledForm>
+            <form name="contact" className="form" method="POST">
               <input type="hidden" name="form-name" value="contact" />
               <input
                 type="text"
@@ -67,14 +60,12 @@ const index = ({ children }) => {
                 placeholder="Content"
                 required
               />
-              <SubmitBtn>
-                <button type="submit" className="submit">
-                  Send
-                </button>
-                <Button to={"/"} style={{ padding: "0" }}>
-                  Return back home
-                </Button>
-              </SubmitBtn>
+              <button type="submit" className="submit">
+                Send
+              </button>
+              <Button to={"/"} style={{ padding: "0" }}>
+                Return back home
+              </Button>
             </form>
           </StyledForm>
         </div>
