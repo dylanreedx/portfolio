@@ -13,7 +13,7 @@ const Project = ({ img, title, cta, url, desc, tech }) => {
   const [element, controls] = useScroll()
   return (
     <StyledProject variants={fade} animate={controls} ref={element}>
-      <img src={img} alt="a recent project" className="cover" />
+      <img src={img} loading="lazy" alt="a recent project" className="cover" />
       <div className="details">
         <h3 className="project-title"> {title} </h3>
         <p className="desc"> {desc} </p>

@@ -48,6 +48,7 @@ const ProjectDetails = ({ light }) => {
               src={project.headerCover}
               alt="project header mockup"
               className="headerMockup"
+              loading="lazy"
             />
             <StyledIntro
               initial="hidden"
