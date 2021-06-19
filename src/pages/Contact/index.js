@@ -6,6 +6,7 @@ import profilePicture from "../../Assets/images/blob-avi.png"
 import headerBg from "../../Assets/images/contact-header.svg"
 import headerBgLg from "../../Assets/images/header-bg-lg.svg"
 import Button from "../../components/Button"
+import Socials from "../../components/Socials"
 import { Section } from "../../styles"
 
 const index = ({ children }) => {
@@ -29,6 +30,9 @@ const index = ({ children }) => {
             <div className="title">
               <h2>Contact</h2>
               <p>Let's Work together! Contact me for any inquiries.</p>
+              <div className="socials">
+                <Socials />
+              </div>
             </div>
           </div>
           <StyledForm>
@@ -92,6 +96,10 @@ const StyledCard = styled.div`
     h2 {
       text-transform: uppercase;
       font-size: 2.725em;
+    }
+    .socials {
+      width: 25%;
+      padding-top: 1em;
     }
   }
 
