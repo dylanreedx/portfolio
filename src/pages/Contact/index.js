@@ -38,7 +38,7 @@ const index = () => {
               method="POST"
               data-netlify="true"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="contact-form" />
               <input
                 type="text"
                 id="name"
