@@ -44,8 +44,8 @@ const StyledTechComp = styled(motion.div)`
     background: rgb(239, 239, 239);
     background: linear-gradient(
       180deg,
-      rgba(239, 239, 239, 1) 0%,
-      rgba(0, 0, 0, 0) 25%
+      rgba(239, 239, 239, 0.25) 0%,
+      rgba(0, 0, 0, 0) 50%
     );
     height: 100%;
     position: absolute;
