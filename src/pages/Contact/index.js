@@ -36,7 +36,7 @@ const index = () => {
               name="contact-form"
               className="form"
               method="POST"
-              data-netlify="true"
+              netlify
               onSubmit="submit"
             >
               <input type="hidden" name="form-name" value="contact-form" />
