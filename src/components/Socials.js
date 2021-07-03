@@ -10,16 +10,19 @@ import TwitterIcon from "@material-ui/icons/Twitter"
 const Socials = ({ isOpen }) => {
   return (
     <StyledSocials isOpen={isOpen}>
-      <a href="https://www.linkedin.com/in/dylan-reed-210394142/">
+      <a
+        href="https://www.linkedin.com/in/dylan-reed-210394142/"
+        alt="linkedin"
+      >
         <LinkedInIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
-      <a href="https://github.com/carbondesigned">
+      <a href="https://github.com/carbondesigned" alt="github">
         <GitHubIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
-      <a href="https://www.instagram.com/carbondesigned/">
+      <a href="https://www.instagram.com/carbondesigned/" alt="instagram">
         <InstagramIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
-      <a href="https://twitter.com/carbondesigned">
+      <a href="https://twitter.com/carbondesigned" alt="twitter">
         <TwitterIcon style={isOpen ? { fontSize: 35 } : { fontSize: 15 }} />
       </a>
     </StyledSocials>
