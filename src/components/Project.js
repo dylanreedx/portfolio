@@ -72,7 +72,7 @@ const StyledProject = styled(motion.div)`
   }
 
   .cover {
-    max-width: 100%;
+    width: 100%;
     overflow: hidden;
     object-fit: contain;
     position: relative;
