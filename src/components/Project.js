@@ -7,12 +7,12 @@ import blob1 from "../Assets/images/blob1.svg"
 
 import Button from "./Button"
 import { useScroll } from "./useScroll"
-import { fade } from "../animation"
+import { fade, slideRightAnim } from "../animation"
 
 const Project = ({ img, title, cta, url, desc, tech }) => {
   const [element, controls] = useScroll()
   return (
-    <StyledProject variants={fade} animate={controls} ref={element}>
+    <StyledProject variants={slideRightAnim} animate={controls} ref={element}>
       <img src={img} loading="lazy" alt="a recent project" className="cover" />
       <div className="details">
         <h3 className="project-title"> {title} </h3>
@@ -74,7 +74,7 @@ const StyledProject = styled(motion.div)`
   .cover {
     max-width: 100%;
     overflow: hidden;
-    object-fit: cover;
+    object-fit: contain;
     position: relative;
     transition: 300ms;
     transform-origin: center;

@@ -149,7 +149,7 @@ const StyledHeader = styled(motion.div)`
   .headerMockup {
     max-width: 100%;
     flex: 1;
-    object-fit: cover;
+    object-fit: contain;
 
     @media screen and (min-width: 768px) {
       max-width: 50%;
@@ -269,7 +269,8 @@ const StyledMidMockup = styled(motion.div)`
   margin: 5em 0;
   height: 75vh;
   background-image: url(${(p) => p.bg});
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   border-radius: 1em;
 `

@@ -11,6 +11,9 @@ import musicAppThumbnail from "./Assets/images/music-app-img/thumbnail.png"
 // game library img
 import gameLibraryMockup1 from "./Assets/images/game-library-img/iMac-mockup.png"
 
+// Capture img
+import captureImg from "./Assets/images/capture-portfolio/capture-mock-full.png"
+
 export const recentProject1 = {
   title: "Personal Music Artist Website",
   cta: "View Project",
@@ -48,4 +51,13 @@ export const gameLibraryApp = {
   tech: "Tech: React, Redux, APIs, JavaScript",
   img: gameLibraryMockup1,
   url: "/portfolio/game-library-app",
+}
+
+export const capturePortfolio = {
+  title: "Capture - A Mock Business Portfolio",
+  cta: "View Project",
+  desc: "A film business displaying movies, photography, and art work.",
+  tech: "Tech: React, Redux, APIs, JavaScript, Framer Motion, React Router",
+  img: captureImg,
+  url: "/portfolio/capture-portfolio",
 }

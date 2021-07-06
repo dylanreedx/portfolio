@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 import {
+  capturePortfolio,
   gameLibraryApp,
   musicPlayerApp,
   recentProject1,
@@ -35,8 +36,9 @@ const index = () => {
         className="projects"
       >
         <Project {...recentProject1} url={"/portfolio/artist-page"} />
-        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
+        <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
+        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
         <Project {...recentProject2} url={"/portfolio/shoe-design"} />
       </StyledProjects>
     </div>

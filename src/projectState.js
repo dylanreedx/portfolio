@@ -17,6 +17,9 @@ import musicAppMockup2 from "./Assets/images/music-app-img/iphoneMockup1.png"
 // import gameLibrary
 import gameLibraryMockup1 from "./Assets/images/game-library-img/iMac-mockup.png"
 import gameLibraryMockup2 from "./Assets/images/game-library-img/simple-flat.png"
+// import Capture
+import captureMock from "./Assets/images/capture-portfolio/capture-mock-full.png"
+import captureMockTwo from "./Assets/images/capture-portfolio/capture-mock-full2.png"
 
 export const ProjectState = () => {
   return [
@@ -63,6 +66,52 @@ export const ProjectState = () => {
         featuresMockup: zarownyIphone1,
         featuresMockup2: zarownyIphone2,
         featuresMockup3: zarownyIpad1,
+        feature1: "",
+        feature2: "",
+      },
+    },
+    {
+      url: "/portfolio/capture-portfolio",
+      headerCover: captureMock,
+      light: true,
+      mockup1: captureMockTwo,
+      title: "Capture - Mock Business Portfolio",
+      desc: "A film business displaying movies, photography, and art work.",
+      website: "https://capture-portfolio-site-mock.netlify.app/",
+      details: {
+        tech: {
+          title: "Technologies",
+          tech1: {
+            title: "React",
+            desc:
+              "The site has the feeling of an app with the features using React such as smooth animations when navigating through the page. The seamless traversing through different pages.",
+          },
+          tech2: {
+            title: "Framer Motion",
+            desc:
+              "Framer Motion is a very extensive JavaScript library that allows the easy development of smooth animations. Shown on this project it is very customizable, manipulating SVGs and the animation when switching pages.",
+          },
+          tech3: {
+            title: "React Router",
+            desc:
+              "To achieve the app-like feel in terms of responsiveness when visiting and navigating through the site, it uses React Router.",
+          },
+        },
+        design: {
+          title: "Design",
+          p1:
+            "The design was not a big feature when designing this project. Strictly to start working with Framer Motion. Though, the switch between a lighter color scheme and a darker gives a very modern feeling.",
+        },
+      },
+      story: {
+        title: "01 Story Behind",
+        p1:
+          "This project was purely experimental with using different libraries and workflows. With this I've learned how to manipulate Framer Motion to animate how I want it to. I thought that being able to animate a website will give me an edge knowing that animations are the trend that catches most people's eyes.",
+      },
+      features: {
+        featuresMockup: captureMock,
+        featuresMockup2: captureMockTwo,
+        featuresMockup3: captureMock,
         feature1: "",
         feature2: "",
       },

@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import Project from "../../components/Project"
 import {
+  capturePortfolio,
   gameLibraryApp,
   musicPlayerApp,
   recentProject1,
@@ -12,13 +13,13 @@ import { Section } from "../../styles"
 
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 import Button from "../../components/Button"
-import { pageAnimation } from "../../animation"
+import { pageAnimation, slideRightAnim } from "../../animation"
 
 const RecentProjectsSection = () => {
   return (
     <StyledProjectSection
       initial="hidden"
-      variants={pageAnimation}
+      variants={slideRightAnim}
       animate="show"
       className="intro"
     >
@@ -30,8 +31,9 @@ const RecentProjectsSection = () => {
       </div>
       <div className="projects">
         <Project {...recentProject1} url={"/portfolio/artist-page"} />
-        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
+        <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
+        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
       </div>
     </StyledProjectSection>
   )
