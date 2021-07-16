@@ -1,25 +1,25 @@
 //Images
-import zarownyHeaderBg from "./Assets/images/nathan-project-img/nathan-double-color-mockup.png"
-import zarownyHeaderMockupBg from "./Assets/images/iphone-mockups2.png"
-import zarownyIphone1 from "./Assets/images/nathan-project-img/flat-iphone.png"
-import zarownyIphone2 from "./Assets/images/nathan-project-img/macbook1.png"
-import zarownyIpad1 from "./Assets/images/nathan-project-img/ipad1.png"
+import zarownyHeaderBg from "./Assets/images/nathan-project-img/nathan-double-color-mockup.png";
+import zarownyHeaderMockupBg from "./Assets/images/iphone-mockups2.png";
+import zarownyIphone1 from "./Assets/images/nathan-project-img/flat-iphone.png";
+import zarownyIphone2 from "./Assets/images/nathan-project-img/macbook1.png";
+import zarownyIpad1 from "./Assets/images/nathan-project-img/ipad1.png";
 
 //shoe project
-import levitatingiPhone from "./Assets/images/shoe-design-img/levitating.png"
-import handMockup from "./Assets/images/shoe-design-img/handMockup.png"
+import levitatingiPhone from "./Assets/images/shoe-design-img/levitating.png";
+import handMockup from "./Assets/images/shoe-design-img/handMockup.png";
 
 // Music App
-import musicAppThumbnail from "./Assets/images/music-app-img/thumbnail-t.png"
-import musicAppMockup from "./Assets/images/music-app-img/iphoneMockup2.png"
-import musicAppMockup2 from "./Assets/images/music-app-img/iphoneMockup1.png"
+import musicAppThumbnail from "./Assets/images/music-app-img/thumbnail-t.png";
+import musicAppMockup from "./Assets/images/music-app-img/iphoneMockup2.png";
+import musicAppMockup2 from "./Assets/images/music-app-img/iphoneMockup1.png";
 
 // import gameLibrary
-import gameLibraryMockup1 from "./Assets/images/game-library-img/iMac-mockup.png"
-import gameLibraryMockup2 from "./Assets/images/game-library-img/simple-flat.png"
+import gameLibraryMockup1 from "./Assets/images/game-library-img/iMac-mockup.png";
+import gameLibraryMockup2 from "./Assets/images/game-library-img/simple-flat.png";
 // import Capture
-import captureMock from "./Assets/images/capture-portfolio/capture-mock-full.png"
-import captureMockTwo from "./Assets/images/capture-portfolio/capture-mock-full2.png"
+import captureMock from "./Assets/images/capture-portfolio/capture-mock-full.png";
+import captureMockTwo from "./Assets/images/capture-portfolio/capture-mock-full2.png";
 
 export const ProjectState = () => {
   return [
@@ -253,5 +253,5 @@ export const ProjectState = () => {
         feature2: "",
       },
     },
-  ]
-}
+  ];
+};

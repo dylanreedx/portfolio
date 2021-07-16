@@ -13,13 +13,13 @@ import { Section } from "../../styles"
 
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 import Button from "../../components/Button"
-import { pageAnimation, slideRightAnim } from "../../animation"
+import { pageAnimation } from "../../animation"
 
 const RecentProjectsSection = () => {
   return (
     <StyledProjectSection
       initial="hidden"
-      variants={slideRightAnim}
+      variants={pageAnimation}
       animate="show"
       className="intro"
     >

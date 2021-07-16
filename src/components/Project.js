@@ -1,16 +1,16 @@
-import React from "react"
-import styled from "styled-components"
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-import blob1 from "../Assets/images/blob1.svg"
+import blob1 from "../Assets/images/blob1.svg";
 
-import Button from "./Button"
-import { useScroll } from "./useScroll"
-import { fade, slideRightAnim } from "../animation"
+import Button from "./Button";
+import { useScroll } from "./useScroll";
+import { fade, slideRightAnim } from "../animation";
 
 const Project = ({ img, title, cta, url, desc, tech }) => {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
   return (
     <StyledProject variants={slideRightAnim} animate={controls} ref={element}>
       <img src={img} loading="lazy" alt="a recent project" className="cover" />
@@ -26,8 +26,8 @@ const Project = ({ img, title, cta, url, desc, tech }) => {
       </div>
       <img className="blob" src={blob1} alt="a decorative blob" />
     </StyledProject>
-  )
-}
+  );
+};
 
 const StyledProject = styled(motion.div)`
   position: relative;
@@ -42,7 +42,7 @@ const StyledProject = styled(motion.div)`
     0 100px 80px rgba(0, 0, 0, 0.07);
   border-radius: 1em;
 
-  &::after {
+  /* &::after {
     content: "";
     width: 100%;
     background: rgb(239, 239, 239);
@@ -55,12 +55,12 @@ const StyledProject = styled(motion.div)`
     position: absolute;
     top: 0;
     z-index: 1;
-  }
+  } */
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
 
-    &::after {
+    /* &::after {
       background: rgb(239, 239, 239);
       background: linear-gradient(
         0deg,
@@ -68,7 +68,7 @@ const StyledProject = styled(motion.div)`
         rgba(0, 0, 0, 0) 65%
       );
       z-index: 1;
-    }
+    } */
   }
 
   .cover {
@@ -81,7 +81,7 @@ const StyledProject = styled(motion.div)`
     z-index: 1;
 
     &:hover {
-      transform: scale(1.25);
+      transform: scale(1.02);
     }
 
     @media screen and (min-width: 768px) {
@@ -147,7 +147,7 @@ const StyledProject = styled(motion.div)`
       max-width: 50%;
     }
   }
-`
+`;
 // Adjust width
 
-export default Project
+export default Project;
