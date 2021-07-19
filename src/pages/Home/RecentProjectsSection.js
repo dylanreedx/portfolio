@@ -1,19 +1,19 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Project from "../../components/Project"
+import Project from "../../components/Project";
 import {
   capturePortfolio,
   gameLibraryApp,
   musicPlayerApp,
   recentProject1,
-  recentProject2,
-} from "../../projects"
-import { Section } from "../../styles"
+  weatherApp,
+} from "../../projects";
+import { Section } from "../../styles";
 
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
-import Button from "../../components/Button"
-import { pageAnimation } from "../../animation"
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import Button from "../../components/Button";
+import { pageAnimation } from "../../animation";
 
 const RecentProjectsSection = () => {
   return (
@@ -30,14 +30,15 @@ const RecentProjectsSection = () => {
         </Button>
       </div>
       <div className="projects">
+        <Project {...weatherApp} url={"/portfolio/weather-app"} />
         <Project {...recentProject1} url={"/portfolio/artist-page"} />
         <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
         <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
       </div>
     </StyledProjectSection>
-  )
-}
+  );
+};
 
 const StyledProjectSection = styled(Section)`
   margin: 4em 0;
@@ -65,6 +66,6 @@ const StyledProjectSection = styled(Section)`
     gap: 4em;
     padding: 2em 0;
   }
-`
+`;
 
-export default RecentProjectsSection
+export default RecentProjectsSection;

@@ -1,19 +1,19 @@
-import React from "react"
-import styled from "styled-components"
-import { motion } from "framer-motion"
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import {
   capturePortfolio,
   gameLibraryApp,
   musicPlayerApp,
   recentProject1,
-  recentProject2,
-} from "../../projects"
+  weatherApp,
+} from "../../projects";
 
 // import PortfolioProject from "../../components/PortfolioProject"
-import Project from "../../components/Project"
-import { Section } from "../../styles"
-import { pageAnimation } from "../../animation"
+import Project from "../../components/Project";
+import { Section } from "../../styles";
+import { pageAnimation } from "../../animation";
 
 const index = () => {
   return (
@@ -33,17 +33,16 @@ const index = () => {
         variants={pageAnimation}
         animate="show"
         className="intro"
-        className="projects"
       >
+        <Project {...weatherApp} url={"/portfolio/weather-app"} />
         <Project {...recentProject1} url={"/portfolio/artist-page"} />
         <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
         <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
-        <Project {...recentProject2} url={"/portfolio/shoe-design"} />
       </StyledProjects>
     </div>
-  )
-}
+  );
+};
 
 const StyledPortfolioHeader = styled(motion.div)`
   width: 100%;
@@ -62,7 +61,7 @@ const StyledPortfolioHeader = styled(motion.div)`
     font-weight: 400;
     padding: 0;
   }
-`
+`;
 
 const StyledProjects = styled(Section)`
   display: flex;
@@ -70,6 +69,6 @@ const StyledProjects = styled(Section)`
   flex-direction: column;
   gap: 2em;
   width: 100%;
-`
+`;
 
-export default index
+export default index;

@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from "react"
-import styled from "styled-components"
-import { motion } from "framer-motion"
-import { useHistory } from "react-router-dom"
-import { ProjectState } from "../projectState"
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { useHistory } from "react-router-dom";
+import { ProjectState } from "../projectState";
 
-import Tech from "../components/Tech"
+import Tech from "../components/Tech";
 
-import { fade } from "../animation"
+import { fade } from "../animation";
 
-import LinkIcon from "@material-ui/icons/Link"
-import { pageAnimation, slideAnim, slideRightAnim } from "../animation"
-import { useScroll } from "../components/useScroll"
+import LinkIcon from "@material-ui/icons/Link";
+import { pageAnimation, slideAnim } from "../animation";
+import { useScroll } from "../components/useScroll";
 
-const ProjectDetails = ({ light }) => {
-  const history = useHistory()
-  const url = history.location.pathname
-  const [projects, setProjects] = useState(ProjectState)
-  const [project, setProject] = useState(null)
+const ProjectDetails = () => {
+  const history = useHistory();
+  const url = history.location.pathname;
+  const [projects, setProjects] = useState(ProjectState);
+  const [project, setProject] = useState(null);
 
   useEffect(() => {
     const currentProject = projects.filter(
       (stateProject) => stateProject.url === url
-    )
-    setProject(currentProject[0])
-  }, [projects, url])
+    );
+    setProject(currentProject[0]);
+  }, [projects, url]);
 
   const isLight = () => {
     if (project.isLight) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
-  const [element, controls] = useScroll()
+  };
+  const [element, controls] = useScroll();
   return (
     <>
       {project && (
@@ -42,7 +42,6 @@ const ProjectDetails = ({ light }) => {
             variants={pageAnimation}
             animate="show"
             className="intro"
-            className="header"
           >
             <img
               src={project.headerCover}
@@ -56,7 +55,6 @@ const ProjectDetails = ({ light }) => {
               animate="show"
               className="intro"
               light={isLight}
-              className="intro"
             >
               <div className="desc">
                 <h2 className="project-title"> {project.title} </h2>
@@ -80,6 +78,9 @@ const ProjectDetails = ({ light }) => {
                 {project.details.tech.title}
               </h2>
               <div className="main">
+                {/* {project.details.tech.map((tech) => (
+                  <Tech title={tech.title} desc={tech.description} />
+                ))} */}
                 <Tech>
                   <div className="tech-title">
                     {project.details.tech.tech1.title}
@@ -136,8 +137,8 @@ const ProjectDetails = ({ light }) => {
         </>
       )}
     </>
-  )
-}
+  );
+};
 
 const StyledHeader = styled(motion.div)`
   width: 100%;
@@ -161,7 +162,7 @@ const StyledHeader = styled(motion.div)`
     flex: 0.5;
     overflow: hidden;
   }
-`
+`;
 
 const StyledIntro = styled(motion.div)`
   width: 100%;
@@ -215,7 +216,7 @@ const StyledIntro = styled(motion.div)`
       color: ${(p) => p.theme.colors.accBlue};
     }
   }
-`
+`;
 
 const StyledDetails = styled(motion.section)`
   padding: 0 1em;
@@ -245,7 +246,7 @@ const StyledDetails = styled(motion.section)`
   p {
     max-width: 75ch;
   }
-`
+`;
 
 const StyledTech = styled(motion.section)`
   display: flex;
@@ -259,7 +260,7 @@ const StyledTech = styled(motion.section)`
     flex-direction: column;
     gap: 5em;
   }
-`
+`;
 
 const StyledMidMockup = styled(motion.div)`
   display: grid;
@@ -273,12 +274,12 @@ const StyledMidMockup = styled(motion.div)`
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 1em;
-`
-const StyledStory = styled(motion.section)``
+`;
+const StyledStory = styled(motion.section)``;
 
 const StyledFeatures = styled(motion.section)`
   width: 100%;
-`
+`;
 
 const StyledFeatureMockup = styled(motion.div)`
   width: 100%;
@@ -291,5 +292,5 @@ const StyledFeatureMockup = styled(motion.div)`
     max-width: 100%;
     object-fit: cover;
   }
-`
-export default ProjectDetails
+`;
+export default ProjectDetails;

@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 import blob1 from "../Assets/images/blob1.svg";
 
 import Button from "./Button";
 import { useScroll } from "./useScroll";
-import { fade, slideRightAnim } from "../animation";
+import { slideRightAnim } from "../animation";
 
 const Project = ({ img, title, cta, url, desc, tech }) => {
   const [element, controls] = useScroll();
@@ -42,33 +41,8 @@ const StyledProject = styled(motion.div)`
     0 100px 80px rgba(0, 0, 0, 0.07);
   border-radius: 1em;
 
-  /* &::after {
-    content: "";
-    width: 100%;
-    background: rgb(239, 239, 239);
-    background: linear-gradient(
-      180deg,
-      rgba(239, 239, 239, 0.5) 0%,
-      rgba(0, 0, 0, 0) 25%
-    );
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-  } */
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
-
-    /* &::after {
-      background: rgb(239, 239, 239);
-      background: linear-gradient(
-        0deg,
-        rgba(239, 239, 239, 1) 0%,
-        rgba(0, 0, 0, 0) 65%
-      );
-      z-index: 1;
-    } */
   }
 
   .cover {

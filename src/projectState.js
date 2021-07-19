@@ -17,9 +17,14 @@ import musicAppMockup2 from "./Assets/images/music-app-img/iphoneMockup1.png";
 // import gameLibrary
 import gameLibraryMockup1 from "./Assets/images/game-library-img/iMac-mockup.png";
 import gameLibraryMockup2 from "./Assets/images/game-library-img/simple-flat.png";
+
 // import Capture
 import captureMock from "./Assets/images/capture-portfolio/capture-mock-full.png";
 import captureMockTwo from "./Assets/images/capture-portfolio/capture-mock-full2.png";
+
+// import weather app
+import weatherAppCover from "./Assets/images/weather-app/mockup.png";
+import weatherAppHeder from "./Assets/images/weather-app/mockup2.png";
 
 export const ProjectState = () => {
   return [
@@ -66,6 +71,53 @@ export const ProjectState = () => {
         featuresMockup: zarownyIphone1,
         featuresMockup2: zarownyIphone2,
         featuresMockup3: zarownyIpad1,
+        feature1: "",
+        feature2: "",
+      },
+    },
+    {
+      url: "/portfolio/weather-app",
+      headerCover: weatherAppHeder,
+      light: true,
+      mockup1: weatherAppCover,
+      title: "Weather App - TypeScript & React",
+      desc:
+        "A project, assigned by Granular.ai as a part of the hiring process. The brief was simple, a two-page app, the first where users will be able to search for a location and will display the current weather and data of the location. On that queried location, users have the ability to favorite that location, and is displayed on the second page.",
+      website: "https://granular-ai-weather-app.netlify.app/",
+      details: {
+        tech: {
+          title: "Technologies",
+          tech1: {
+            title: "React",
+            desc:
+              "The site is created using the JavaScript library React. Using React gives the ability to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
+          },
+          tech2: {
+            title: "TypeScript",
+            desc:
+              "Using the modern language to use strict typing made using props more robust and more bug protected. The development process couldn't have been more efficient when it came to debugging.",
+          },
+          tech3: {
+            title: "Redux & OpenWeatherAPI",
+            desc:
+              "Obviously the app was ran off of some weather api, I chose OpenWeatherAPI. With the documentation, it was very easy to implement and set up redux to manage the state throughout the app.",
+          },
+        },
+        design: {
+          title: "Design",
+          p1:
+            "The design is very minimalistic, due to there only being two pages to the app, as well as the colors. With this project, I more focused on the functionality over the design. The main objective was to have the proper functionality and to have the feel as an app.",
+        },
+      },
+      story: {
+        title: "01 Story Behind",
+        p1:
+          "This project was given as an assignment from a company called Granular.ai as a part of the hiring process. The strictly gave me a brief of all the functionality. It was to prove more of what I could do during the development process, how to have a app-like feel especially with client-side rendering.",
+      },
+      features: {
+        featuresMockup: weatherAppCover,
+        featuresMockup2: weatherAppHeder,
+        featuresMockup3: weatherAppCover,
         feature1: "",
         feature2: "",
       },

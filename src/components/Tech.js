@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
-import { motion } from "framer-motion"
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import bg from "../Assets/images/contact-header.svg"
-import { useScroll } from "./useScroll"
-import { fade, slideRightAnim } from "../animation"
+import bg from "../Assets/images/contact-header.svg";
+import { useScroll } from "./useScroll";
+import { slideRightAnim } from "../animation";
 
-const Tech = ({ children }) => {
-  const [element, controls] = useScroll()
+const Tech = ({ children, title, desc }) => {
+  const [element, controls] = useScroll();
   return (
     <>
       <StyledTechComp
@@ -19,8 +19,8 @@ const Tech = ({ children }) => {
         {children}
       </StyledTechComp>
     </>
-  )
-}
+  );
+};
 
 const StyledTechComp = styled(motion.div)`
   width: 100%;
@@ -41,12 +41,6 @@ const StyledTechComp = styled(motion.div)`
   &::after {
     content: "";
     width: 100%;
-    background: rgb(239, 239, 239);
-    background: linear-gradient(
-      180deg,
-      rgba(239, 239, 239, 0.25) 0%,
-      rgba(0, 0, 0, 0) 50%
-    );
     height: 100%;
     position: absolute;
     top: 0;
@@ -60,12 +54,6 @@ const StyledTechComp = styled(motion.div)`
     &::after {
       content: "";
       width: 100%;
-      background: rgb(239, 239, 239);
-      background: linear-gradient(
-        0deg,
-        rgba(239, 239, 239, 1) 0%,
-        rgba(0, 0, 0, 0) 50%
-      );
       height: 100%;
       position: absolute;
       top: 0;
@@ -109,5 +97,5 @@ const StyledTechComp = styled(motion.div)`
     padding: 0.5em 0;
     z-index: 2;
   }
-`
-export default Tech
+`;
+export default Tech;
