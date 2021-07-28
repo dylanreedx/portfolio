@@ -8,6 +8,9 @@ import {
   musicPlayerApp,
   recentProject1,
   weatherApp,
+  shoppingCartApp,
+  quizApp,
+  notesApp,
 } from "../../projects";
 import { Section } from "../../styles";
 
@@ -30,11 +33,11 @@ const RecentProjectsSection = () => {
         </Button>
       </div>
       <div className="projects">
+        <Project {...notesApp} url={"/portfolio/notes-app"} />
+        <Project {...quizApp} url={"/portfolio/quiz-app"} />
+        <Project {...shoppingCartApp} url={"/portfolio/shopping-cart-app"} />
         <Project {...weatherApp} url={"/portfolio/weather-app"} />
-        <Project {...recentProject1} url={"/portfolio/artist-page"} />
-        <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
-        <Project {...musicPlayerApp} url={"/portfolio/music-player-app"} />
       </div>
     </StyledProjectSection>
   );

@@ -26,6 +26,13 @@ import captureMockTwo from "./Assets/images/capture-portfolio/capture-mock-full2
 import weatherAppCover from "./Assets/images/weather-app/mockup.png";
 import weatherAppHeder from "./Assets/images/weather-app/mockup2.png";
 
+// shopping cart
+import shoppingCartOne from "./Assets/images/shopping-cart-app/mockup.png";
+// quiz app
+import quizApp from "./Assets/images/quiz-app/mockup.png";
+// notes app
+import notesApp from "./Assets/images/notes-app/mockup.png";
+
 export const ProjectState = () => {
   return [
     {
@@ -43,7 +50,7 @@ export const ProjectState = () => {
           tech1: {
             title: "React",
             desc:
-              "The site is created using the JavaScript library React. Using React gives the ablitity to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
+              "The site is created using the JavaScript library React. Using React gives the ability to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
           },
           tech2: {
             title: "Styled Components",
@@ -71,6 +78,141 @@ export const ProjectState = () => {
         featuresMockup: zarownyIphone1,
         featuresMockup2: zarownyIphone2,
         featuresMockup3: zarownyIpad1,
+        feature1: "",
+        feature2: "",
+      },
+    },
+    {
+      url: "/portfolio/shopping-cart-app",
+      headerCover: shoppingCartOne,
+      light: true,
+      mockup1: shoppingCartOne,
+      title: "Shopping Cart App",
+      desc:
+        "Using CSS frameworks, state management libraries create an easy to implement scalable shopping cart app.",
+      website: "https://dylanreed-shopping-cart-app.netlify.app/",
+      details: {
+        tech: {
+          title: "Technologies",
+          tech1: {
+            title: "React",
+            desc:
+              "The site is created using the JavaScript library React. Using React gives the ablitity to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
+          },
+          tech2: {
+            title: "Redux",
+            desc:
+              "Managing state is very important especially while working with APIs.",
+          },
+          tech3: {
+            title: "Material UI",
+            desc:
+              "Creating fast and efficient components such as the drawer to open the cart, or errors, etc.",
+          },
+        },
+        design: {
+          title: "Design",
+          p1: "",
+        },
+      },
+      story: {
+        title: "01 Story Behind",
+        p1: "",
+      },
+      features: {
+        featuresMockup: shoppingCartOne,
+        featuresMockup2: shoppingCartOne,
+        featuresMockup3: shoppingCartOne,
+        feature1: "",
+        feature2: "",
+      },
+    },
+    {
+      url: "/portfolio/notes-app",
+      headerCover: notesApp,
+      light: true,
+      mockup1: notesApp,
+      title: "Notes App",
+      desc:
+        "Easy and efficient note taking app, which offers a full page layout design to fit all notes on a sidebar, which then can be displayed on the main section to the right.",
+      website: "https://dylanreed-notes-app.netlify.app/",
+      details: {
+        tech: {
+          title: "Technologies",
+          tech1: {
+            title: "React",
+            desc:
+              "The site is created using the JavaScript library React. Using React gives the ablitity to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
+          },
+          tech2: {
+            title: "TypeScript",
+            desc:
+              "Using strict typing allows for easier and maintainable debugging.",
+          },
+          tech3: {
+            title: "Context API",
+            desc:
+              "With a smaller app, figured to be more efficient to have some state management located within the project.",
+          },
+        },
+        design: {
+          title: "Design",
+          p1: "",
+        },
+      },
+      story: {
+        title: "01 Story Behind",
+        p1: "",
+      },
+      features: {
+        featuresMockup: notesApp,
+        featuresMockup2: notesApp,
+        featuresMockup3: notesApp,
+        feature1: "",
+        feature2: "",
+      },
+    },
+    {
+      url: "/portfolio/quiz-app",
+      headerCover: quizApp,
+      light: true,
+      mockup1: quizApp,
+      title: "Quiz App",
+      desc:
+        "A simple app that uses a simple API to display questions and answers, then functionality that performs checks based off the correct answer that the API gives through JSON.",
+      website: "https://dylanreed-quiz-app.netlify.app/",
+      details: {
+        tech: {
+          title: "Technologies",
+          tech1: {
+            title: "React",
+            desc:
+              "The site is created using the JavaScript library React. Using React gives the ablitity to easily maintain and update frequently to give the most up to date information about the artist to his fans. ",
+          },
+          tech2: {
+            title: "TypeScript",
+            desc:
+              "Using strict typing allows for easier and maintainable debugging.",
+          },
+          tech3: {
+            title: "Trivia API",
+            desc:
+              "Being able to fetch questions and answers allows for a better user experience when having dynamic features alongside.",
+          },
+        },
+        design: {
+          title: "Design",
+          p1: "",
+        },
+      },
+      story: {
+        title: "01 Story Behind",
+        p1: "",
+      },
+      features: {
+        featuresMockup: quizApp,
+        featuresMockup2: quizApp,
+        featuresMockup3: quizApp,
         feature1: "",
         feature2: "",
       },

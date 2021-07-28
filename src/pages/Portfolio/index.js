@@ -8,6 +8,9 @@ import {
   musicPlayerApp,
   recentProject1,
   weatherApp,
+  shoppingCartApp,
+  quizApp,
+  notesApp,
 } from "../../projects";
 
 // import PortfolioProject from "../../components/PortfolioProject"
@@ -34,6 +37,9 @@ const index = () => {
         animate="show"
         className="intro"
       >
+        <Project {...notesApp} url={"/portfolio/notes-app"} />
+        <Project {...quizApp} url={"/portfolio/quiz-app"} />
+        <Project {...shoppingCartApp} url={"/portfolio/shopping-cart-app"} />
         <Project {...weatherApp} url={"/portfolio/weather-app"} />
         <Project {...recentProject1} url={"/portfolio/artist-page"} />
         <Project {...capturePortfolio} url={"/portfolio/capture-portfolio"} />

@@ -15,6 +15,13 @@ import captureImg from "./Assets/images/capture-portfolio/capture-mock-full.png"
 // Capture img
 import weatherAppImg from "./Assets/images/weather-app/mockup.png";
 
+// Shopping cart app
+import shoppingCartMock from "./Assets/images/shopping-cart-app/mockup.png";
+// Quiz app
+import quizAppMock from "./Assets/images/quiz-app/mockup.png";
+// notes app
+import notesAppMock from "./Assets/images/notes-app/mockup.png";
+
 export const recentProject1 = {
   title: "Personal Music Artist Website",
   cta: "View Project",
@@ -70,4 +77,31 @@ export const weatherApp = {
   tech: "Tech: React, Redux, APIs, TypeScript, React Router",
   img: weatherAppImg,
   url: "/portfolio/weather-app",
+};
+export const shoppingCartApp = {
+  title: "Shopping Cart App",
+  cta: "View Project",
+  desc:
+    "Using CSS frameworks, state management libraries create an easy to implement scalable shopping cart app.",
+  tech: "Tech: React, Redux, APIs, TypeScript, Material UI",
+  img: shoppingCartMock,
+  url: "/portfolio/shopping-cart-app",
+};
+export const quizApp = {
+  title: "Quiz App",
+  cta: "View Project",
+  desc:
+    "A simple app that uses a simple API to display questions and answers, then functionality that performs checks based off the correct answer that the API gives through JSON.",
+  tech: "Tech: React, Trivia API, TypeScript",
+  img: quizAppMock,
+  url: "/portfolio/quiz-app",
+};
+export const notesApp = {
+  title: "Notes App",
+  cta: "View Project",
+  desc:
+    "Easy and efficient note taking app, which offers a full page layout design to fit all notes on a sidebar, which then can be displayed on the main section to the right.",
+  tech: "Tech: React, Context API, TypeScript",
+  img: notesAppMock,
+  url: "/portfolio/notes-app",
 };
