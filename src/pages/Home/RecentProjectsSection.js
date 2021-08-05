@@ -33,10 +33,10 @@ const RecentProjectsSection = () => {
         </Button>
       </div>
       <div className="projects">
+        <Project {...weatherApp} url={"/portfolio/weather-app"} />
         <Project {...notesApp} url={"/portfolio/notes-app"} />
         <Project {...quizApp} url={"/portfolio/quiz-app"} />
         <Project {...shoppingCartApp} url={"/portfolio/shopping-cart-app"} />
-        <Project {...weatherApp} url={"/portfolio/weather-app"} />
         <Project {...gameLibraryApp} url={"/portfolio/game-library-app"} />
       </div>
     </StyledProjectSection>
