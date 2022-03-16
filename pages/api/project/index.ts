@@ -1,11 +1,15 @@
 import prisma from 'lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export const getProjects = async (
+export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse
-) => {
-  const result = await prisma.project.findMany();
+) {
+  const result = await prisma.project.findMany({
+    where: {
+      slug: req.query.slug as string,
+    },
+  });
 
-  return res.json(result);
-};
+  res.json(result);
+}

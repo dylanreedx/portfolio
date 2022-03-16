@@ -1,10 +1,18 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { useForm, FormProvider } from 'react-hook-form';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const methods = useForm();
-  return <Component {...pageProps} />;
+  const [queryClient] = React.useState(() => new QueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Component {...pageProps} />
+      </Hydrate>
+    </QueryClientProvider>
+  );
 }
 
 export default MyApp;
