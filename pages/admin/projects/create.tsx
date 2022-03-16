@@ -45,11 +45,19 @@ const Create = (props: Props) => {
   });
   const onSubmit = async (data: ProjectType, e: any) => {
     try {
-      await api.post('/project/create', data, {
-        headers: {
-          'Content-Type': 'application/json',
+      await api.post(
+        '/project/create',
+        {
+          ...data,
+          projectStartDate: new Date(data.projectStartDate),
+          projectEndDate: new Date(data.projectEndDate),
         },
-      });
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       reset();
     } catch (error) {
       console.error(error);

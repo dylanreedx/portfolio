@@ -9,6 +9,6 @@ export interface ProjectType {
   tech: string[];
   gitHubLink: string;
   liveLink: string;
-  projectStartDate: Date | string;
-  projectEndDate: Date | string;
+  projectStartDate: Date;
+  projectEndDate: Date;
 }

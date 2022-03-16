@@ -22,8 +22,8 @@ model Project {
   galleryImg       String[]
   liveLink         String
   gitHubLink       String
-  projectStartDate String
-  projectEndDate   String
+  projectStartDate DateTime
+  projectEndDate   DateTime
 }
 
 model Experience {
