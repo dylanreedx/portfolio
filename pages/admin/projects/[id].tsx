@@ -10,6 +10,7 @@ import Router from 'next/router';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { projectSchema } from 'schema/ProjectSchema';
 import { titleToSlug } from 'lib/titleToSlug';
+import Image from 'next/image';
 
 const ProjectDetails = () => {
   const router = useClientRouter();
@@ -146,35 +147,70 @@ const ProjectDetails = () => {
               control={control}
             />
           </InputWrapper>
-          <InputWrapper
-            error={errors.coverImg && errors.coverImg.message}
-            label='Project Cover Image'
-          >
-            <Controller
-              name='coverImg'
-              render={({ field }) => (
-                <input className='p-6' placeholder='Cover Image' {...field} />
-              )}
-              control={control}
-            />
-          </InputWrapper>
-          <InputWrapper
-            error={errors.galleryImg && errors.galleryImg[0].message}
-            label='Project Image Gallery'
-          >
-            <Controller
-              render={({ field, fieldState }) => (
-                <input
-                  className='p-6'
-                  placeholder='Image Gallery'
-                  {...field}
-                  onChange={(e) => field.onChange(e.target.value.split(','))}
+          <div className='flex flex-col items-center'>
+            <InputWrapper
+              error={errors.coverImg && errors.coverImg.message}
+              label='Project Cover Image'
+            >
+              <Controller
+                name='coverImg'
+                render={({ field }) => (
+                  <input className='p-6' placeholder='Cover Image' {...field} />
+                )}
+                control={control}
+              />
+            </InputWrapper>
+            <div className='w-3/12 p-6'>
+              {getValues('coverImg') && (
+                <Image
+                  src={getValues('coverImg')}
+                  alt={'project img'}
+                  objectFit='cover'
+                  layout='responsive'
+                  objectPosition='center'
+                  width={100}
+                  height={100}
                 />
               )}
-              name='galleryImg'
-              control={control}
-            />
-          </InputWrapper>
+            </div>
+          </div>
+          <div className='flex flex-col items-center'>
+            <InputWrapper
+              error={errors.galleryImg && errors.galleryImg[0].message}
+              label='Project Image Gallery'
+            >
+              <Controller
+                render={({ field, fieldState }) => (
+                  <input
+                    className='p-6'
+                    placeholder='Image Gallery'
+                    {...field}
+                    onChange={(e) => field.onChange(e.target.value.split(','))}
+                  />
+                )}
+                name='galleryImg'
+                control={control}
+              />
+              <div className='flex'>
+                {getValues('galleryImg') &&
+                  // @ts-ignore
+                  getValues('galleryImg').length > 1 &&
+                  getValues('galleryImg')?.map((img, idx) => (
+                    <div className='w-3/12 p-6' key={idx}>
+                      <Image
+                        src={img}
+                        alt={'project img'}
+                        objectFit='cover'
+                        layout='responsive'
+                        objectPosition='center'
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  ))}
+              </div>
+            </InputWrapper>
+          </div>
           <div className='flex gap-4'>
             <InputWrapper
               error={errors.gitHubLink && errors.gitHubLink.message}

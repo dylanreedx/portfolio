@@ -8,7 +8,7 @@ type Props = {
 
 const InputWrapper = (props: Props) => {
   return (
-    <div className='flex flex-col gap-2 flex-1'>
+    <div className='flex flex-col gap-2 flex-1 w-full'>
       {props.error && <span>{props.error}</span>}
       <label>{props.label}</label>
       {props.children}
