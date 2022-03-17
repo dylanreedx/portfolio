@@ -27,11 +27,11 @@ export function ProjectCard({ project, nextProject }: Props) {
         <div className='z-20 lg:py-12 w-full'>
           <div className='-translate-y-24 lg:-translate-y-32 xl:-translate-y-0 xl:-translate-x-52 flex flex-col xl:flex-row gap-2 xl:gap-6 items-start xl:items-center animate-slide-up-mobile-offset lg:animate-slide-in-offset-lg xl:animate-slide-in-offset'>
             <NextButton nextProject={nextProject} />
-            <h4 className='text-white text-3xl md:text-4xl lg:text-5xl md:w-1/2 uppercase font-bold lg:w-[20ch] select-none'>
+            <h4 className='text-white text-3xl md:text-4xl lg:text-5xl md:w-1/2 uppercase font-bold lg:w-[20ch] select-none z-20'>
               {project.title}
             </h4>
           </div>
-          <div className='text-primary-dark-200 lg:w-[75ch] xl:px-12 xl:pt-20 flex flex-col gap-12 animate-slide-in lg:animate-pop-up -mt-12 md:-mt-14 xl:-mt-6'>
+          <div className='text-primary-dark-200 lg:w-[75ch] xl:px-12 xl:pt-20 flex flex-col gap-12 animate-pop-up -mt-12 md:-mt-14 xl:-mt-6 z-10'>
             <div>
               <ul className='grid grid-flow-col gap-6 w-1/2 py-2'>
                 {project.tech.map((tech: string) => (

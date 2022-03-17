@@ -5,10 +5,15 @@ export function HeroSection({}) {
     <section className='text-primary-dark-100 flex lg:flex-row gap-4 flex-col-reverse justify-between'>
       <div className='flex flex-col gap-6'>
         <h1 className='uppercase font-bold text-3xl lg:text-6xl lg:w-[21ch]'>
-          i’m dylan reed, a canadian{' '}
-          <span className='text-primary-500 italic'>software engineer</span>.
-          passion to learn and critical to provide a{' '}
-          <span className='text-primary-500 italic'>great ux</span>.
+          i’m dylan reed, a canadian
+          <span className='text-primary-500 animate-to-italic inline-block skew-x-[-20deg]'>
+            software engineer
+          </span>
+          . passion to learn and critical to provide a
+          <div className='text-primary-500 animate-to-italic inline-block skew-x-[-20deg]'>
+            great ux
+          </div>
+          .
         </h1>
         <p className='lg:w-[72ch] text-primary-dark-300'>
           Hi, my name is Dylan, and I am looking to advance myself further with
