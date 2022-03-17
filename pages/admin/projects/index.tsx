@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { QueryClient, useMutation, useQuery } from 'react-query';
 import api from 'axiosStore';
 import { ProjectType } from 'types';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ProjectCard from 'components/admin/ProjectCard';
 
@@ -11,6 +10,7 @@ type Props = {};
 
 const Projects = (props: Props) => {
   const router = useRouter();
+  const { id } = router.query;
   const queryClient = new QueryClient();
   const fetchProjects = async () => {
     const { data } = await api.get('/project');
@@ -20,13 +20,13 @@ const Projects = (props: Props) => {
     data: projects,
     isLoading,
     error,
-  } = useQuery<ProjectType[], Error>('projects', fetchProjects);
+  } = useQuery<ProjectType[], Error>(['projects', id], fetchProjects);
   const deleteProject = useMutation(
     (id: string) => {
       return api.delete(`/project/${id}`);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries('projects'),
+      onSuccess: (id) => queryClient.invalidateQueries(['projects', id]),
     }
   );
 
