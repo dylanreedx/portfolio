@@ -24,6 +24,9 @@ export function ProjectSection({}) {
   }, [projects, selectedProject]);
   return (
     <section>
+      <h2 className='text-primary-dark-100 text-3xl md:text-4xl lg:text-5xl font-bold italic py-12 md:pt-20'>
+        WORK
+      </h2>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       {projects && (

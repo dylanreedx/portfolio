@@ -64,6 +64,22 @@ module.exports = {
             transform: 'translateX(0)',
           },
         },
+        'slide-up-mobile-offset': {
+          '0%': {
+            transform: 'translateY(-15%)',
+          },
+          '100%': {
+            transform: 'translateY(-6rem)',
+          },
+        },
+        'slide-in-offset-lg': {
+          '0%': {
+            transform: 'translateY(-15%)',
+          },
+          '100%': {
+            transform: 'translateY(-8rem)',
+          },
+        },
       },
       animation: {
         'zoom-in': 'zoom-in 200ms ease-in-out',
@@ -71,6 +87,8 @@ module.exports = {
         'pop-up': 'pop-up 500ms ease',
         'slide-in': 'slide-in 500ms ease',
         'slide-in-offset': 'slide-in-offset 500ms ease',
+        'slide-up-mobile-offset': 'slide-up-mobile-offset 750ms ease',
+        'slide-in-offset-lg': 'slide-in-offset-lg 500ms ease',
       },
     },
     plugins: [],

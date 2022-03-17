@@ -2,15 +2,15 @@ import React from 'react';
 import { IconList } from './IconList';
 export function HeroSection({}) {
   return (
-    <section className='text-primary-dark-100 flex justify-between'>
+    <section className='text-primary-dark-100 flex lg:flex-row gap-4 flex-col-reverse justify-between'>
       <div className='flex flex-col gap-6'>
-        <h1 className='uppercase font-bold text-6xl w-[21ch]'>
+        <h1 className='uppercase font-bold text-3xl lg:text-6xl lg:w-[21ch]'>
           i’m dylan reed, a canadian{' '}
           <span className='text-primary-500 italic'>software engineer</span>.
           passion to learn and critical to provide a{' '}
           <span className='text-primary-500 italic'>great ux</span>.
         </h1>
-        <p className='w-[72ch] text-primary-dark-300'>
+        <p className='lg:w-[72ch] text-primary-dark-300'>
           Hi, my name is Dylan, and I am looking to advance myself further with
           both experience and into the industry. I have a deep passion to create
           and learn with modern technologies such as a few examples, TypeScript,
