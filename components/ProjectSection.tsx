@@ -1,8 +1,22 @@
-import { useProjects } from 'hooks/useProjects';
+import { fetchProjects, useProjects } from 'hooks/useProjects';
 import React from 'react';
+import { dehydrate, QueryClient } from 'react-query';
 import { ProjectType } from 'types';
 import { ProjectCard } from './ProjectCard';
-export function ProjectSection({}) {
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery('projects', fetchProjects);
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
+
+export function ProjectSection() {
   const { data: projects, isLoading, error } = useProjects();
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
 
@@ -27,6 +41,7 @@ export function ProjectSection({}) {
       <h2 className='text-primary-dark-100 text-3xl md:text-4xl lg:text-5xl font-bold italic py-12 md:pt-20'>
         WORK
       </h2>
+      {/* TODO: better loading state */}
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       {projects && (
