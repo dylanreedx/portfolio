@@ -19,8 +19,6 @@ const Icon = (props: Props) => {
             src={`/${props.icon}.svg`}
             alt='github'
             layout='fill'
-            width={100}
-            height={100}
             objectFit='cover'
             objectPosition='center'
           />

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { ProjectType } from 'types';
+import Img from './Img';
 import NextButton from './NextButton';
 import Tech from './Tech';
 
@@ -16,13 +17,7 @@ export function ProjectCard({ project, nextProject }: Props) {
       <div className='flex flex-col xl:flex-row'>
         <div className='relative w-full h-52 md:h-72 xl:w-[85em] xl:h-[30em] overflow-hidden rounded-xl animate-pop-up xl:animate-zoom-out'>
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t xl:bg-gradient-to-l from-primary-dark-500 to-transparent z-10'></div>
-          <Image
-            src={project.coverImg}
-            alt={project.title}
-            layout='fill'
-            objectFit='cover'
-            objectPosition='center'
-          />
+          <Img src={project.coverImg} alt={project.title} />
         </div>
         <div className='z-20 lg:py-12 w-full'>
           <div className='-translate-y-24 lg:-translate-y-32 xl:-translate-y-0 xl:-translate-x-52 flex flex-col xl:flex-row gap-2 xl:gap-6 items-start xl:items-center animate-slide-up-mobile-offset lg:animate-slide-in-offset-lg xl:animate-slide-in-offset'>

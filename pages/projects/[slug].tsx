@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 import { ParsedUrlQuery } from 'querystring';
 import Image from 'next/image';
 import Tech from 'components/Tech';
+import Img from 'components/Img';
 
 type Props = {
   project: ProjectType;
@@ -39,7 +40,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 const ProjectDetails = ({ project, slug }: Props) => {
   const [selectedImage, setSelectedImage] = React.useState(0);
-  const { data } = useQuery<ProjectType, Error>(
+  const { data, isLoading, error } = useQuery<ProjectType, Error>(
     'project',
     () => fetchProject(slug),
     {
@@ -65,31 +66,19 @@ const ProjectDetails = ({ project, slug }: Props) => {
 
   return (
     <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 text-primary-dark-100'>
+      {isLoading && (
+        <div className='grid place-items-center min-h-[20vh]'>
+          <div className='loader ease-linear rounded-full border-4 border-t-4 border-primary-dark-400 h-12 w-12 mb-4'></div>
+        </div>
+      )}
       {data && (
         <>
           {/* project main section */}
-          <section className='relative overflow-hidden rounded-2xl z-0 flex'>
+          <section className='relative overflow-hidden rounded-2xl flex w-full z-0'>
             {/* links */}
-            <div></div>
-            {/* image gradient */}
-            <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary-dark-500 to-transparent z-20'></div>
-            {/* project image wrapper */}
-            <div className='w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up'>
-              <Image
-                // @ts-ignore
-                src={data.galleryImg[selectedImage]}
-                alt={data.title}
-                layout={'fill'}
-                objectFit={'cover'}
-                objectPosition={'center'}
-                priority
-              />
-            </div>
-          </section>
-          <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
-            <div className='flex gap-6'>
+            <div className='flex gap-6 z-50 w-full p-6'>
               {project.liveLink && (
-                <div className='flex gap-2 items-start'>
+                <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 ease-in-out duration-200 h-fit rounded-full'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-4 w-4'
@@ -104,15 +93,26 @@ const ProjectDetails = ({ project, slug }: Props) => {
                       d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
                     />
                   </svg>
-                  <a href={project.liveLink} className='lg:text-xl'>
-                    View Project
-                  </a>
+                  <a href={project.liveLink}>View Project</a>
                 </div>
               )}
-              <a href={project.gitHubLink} className='lg:text-xl'>
-                View Code
-              </a>
+              <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 h-fit rounded-full'>
+                <a href={project.gitHubLink}>View Code</a>
+              </div>
             </div>
+            {/* image gradient */}
+            <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary-dark-500 to-transparent z-20'></div>
+            {/* project image wrapper */}
+            <div className='w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up'>
+              <Img
+                // @ts-ignore
+                src={data.galleryImg[selectedImage]}
+                alt={data.title}
+                priority
+              />
+            </div>
+          </section>
+          <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
             {/* tech */}
             <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:w-1/2 xl:w-1/3 order-2 md:order-1'>
               {data.tech.map((tech: string) => (
@@ -141,13 +141,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
                     className='relative w-full h-72 overflow-hidden rounded-xl'
                     key={img}
                   >
-                    <Image
-                      src={img}
-                      alt={data.title}
-                      layout={'fill'}
-                      objectFit={'cover'}
-                      objectPosition={'center'}
-                    />
+                    <Img src={img} alt={data.title} />
                   </div>
                 ))}
               </div>
