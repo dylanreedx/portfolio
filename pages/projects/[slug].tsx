@@ -64,7 +64,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
   }, [data, selectedImage]);
 
   return (
-    <main className='bg-primary-dark-500 min-h-screen lg:p-16 text-primary-dark-100'>
+    <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 text-primary-dark-100'>
       {data && (
         <>
           {/* project main section */}
@@ -74,7 +74,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
             {/* image gradient */}
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary-dark-500 to-transparent z-20'></div>
             {/* project image wrapper */}
-            <div className='w-full min-h-[65vh] z-10'>
+            <div className='w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up'>
               <Image
                 // @ts-ignore
                 src={data.galleryImg[selectedImage]}
@@ -86,19 +86,49 @@ const ProjectDetails = ({ project, slug }: Props) => {
               />
             </div>
           </section>
-          <section className='z-50 px-12 xl:-translate-y-28 flex flex-col gap-4'>
+          <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
+            <div className='flex gap-6'>
+              {project.liveLink && (
+                <div className='flex gap-2 items-start'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-4 w-4'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+                    />
+                  </svg>
+                  <a href={project.liveLink} className='lg:text-xl'>
+                    View Project
+                  </a>
+                </div>
+              )}
+              <a href={project.gitHubLink} className='lg:text-xl'>
+                View Code
+              </a>
+            </div>
             {/* tech */}
-            <div className='grid grid-flow-col gap-4 w-1/3'>
+            <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:w-1/2 xl:w-1/3 order-2 md:order-1'>
               {data.tech.map((tech: string) => (
                 <Tech key={tech} tech={tech} />
               ))}
             </div>
-            <h1 className='xl:text-7xl font-bold w-1/2 z-50'>{data.title}</h1>
-            <p className='text-primary-dark-300 w-3/4'>{data.excerpt}</p>
+            <h1 className='text-4xl md:text-5xl xl:text-7xl font-bold w-full md:w-3/4 xl:w-1/2 z-50 order-1 md:order-2'>
+              {data.title}
+            </h1>
+            <p className='text-primary-dark-300 lg:w-3/4 order-3'>
+              {data.excerpt}
+            </p>
           </section>
           <section className='xl:px-52 flex flex-col gap-12'>
             <section className='flex flex-col gap-6'>
-              <h2 className='uppercase font-bold xl:text-5xl text-center'>
+              <h2 className='uppercase font-bold text-4xl xl:text-5xl text-center'>
                 About the Project
               </h2>
               <p className='text-primary-dark-300'>{data.description}</p>
