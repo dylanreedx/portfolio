@@ -8,6 +8,8 @@ import { ParsedUrlQuery } from 'querystring';
 import Image from 'next/image';
 import Tech from 'components/Tech';
 import Img from 'components/Img';
+import Icon from 'components/Icon';
+import Link from 'next/link';
 
 type Props = {
   project: ProjectType;
@@ -66,6 +68,25 @@ const ProjectDetails = ({ project, slug }: Props) => {
 
   return (
     <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 text-primary-dark-100'>
+      <Link href={'/'}>
+        <a className='flex items-center mb-6 mt-2 w-fit bg-primary-dark-600 rounded-full py-2 px-8 h-fit'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-4 w-4 animate-bounce-horizontal'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            strokeWidth={4}
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M15 19l-7-7 7-7'
+            />
+          </svg>
+          <span className='font-bold'>Back</span>
+        </a>
+      </Link>
       {isLoading && (
         <div className='grid place-items-center min-h-[20vh]'>
           <div className='loader ease-linear rounded-full border-4 border-t-4 border-primary-dark-400 h-12 w-12 mb-4'></div>
@@ -76,15 +97,14 @@ const ProjectDetails = ({ project, slug }: Props) => {
           {/* project main section */}
           <section className='relative overflow-hidden rounded-2xl flex w-full z-0'>
             {/* links */}
-            <div className='flex gap-6 z-50 w-full p-6'>
+            <div className='flex gap-2 md:gap-6 z-50 w-full p-2 md:p-6'>
               {project.liveLink && (
                 <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 ease-in-out duration-200 h-fit rounded-full'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-4 w-4'
+                    className='h-4 w-4 stroke-primary-dark-400'
                     fill='none'
                     viewBox='0 0 24 24'
-                    stroke='currentColor'
                     strokeWidth={2}
                   >
                     <path
@@ -93,11 +113,22 @@ const ProjectDetails = ({ project, slug }: Props) => {
                       d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
                     />
                   </svg>
-                  <a href={project.liveLink}>View Project</a>
+                  <a
+                    href={project.liveLink}
+                    className='text-xs whitespace-nowrap'
+                  >
+                    View Project
+                  </a>
                 </div>
               )}
               <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 h-fit rounded-full'>
-                <a href={project.gitHubLink}>View Code</a>
+                <Icon icon='GitHub' size='4' />
+                <a
+                  href={project.gitHubLink}
+                  className='text-xs whitespace-nowrap'
+                >
+                  View Code
+                </a>
               </div>
             </div>
             {/* image gradient */}
@@ -114,7 +145,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
           </section>
           <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
             {/* tech */}
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:w-1/2 xl:w-1/3 order-2 md:order-1'>
+            <div className='grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 md:w-1/2 xl:w-1/3 order-3 md:order-1'>
               {data.tech.map((tech: string) => (
                 <Tech key={tech} tech={tech} />
               ))}
@@ -122,7 +153,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
             <h1 className='text-4xl md:text-5xl xl:text-7xl font-bold w-full md:w-3/4 xl:w-1/2 z-50 order-1 md:order-2'>
               {data.title}
             </h1>
-            <p className='text-primary-dark-300 lg:w-3/4 order-3'>
+            <p className='text-primary-dark-300 lg:w-3/4 order-2 md:order-3'>
               {data.excerpt}
             </p>
           </section>

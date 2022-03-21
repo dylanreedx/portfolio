@@ -2,7 +2,7 @@ import React from 'react';
 import { IconList } from './IconList';
 export function HeroSection({}) {
   return (
-    <section className='text-primary-dark-100 flex lg:flex-row gap-4 flex-col-reverse justify-between'>
+    <section className='text-primary-dark-100 flex lg:flex-row gap-6 py-6 flex-col-reverse justify-between'>
       <div className='flex flex-col gap-6'>
         <h1 className='uppercase font-bold text-3xl lg:text-6xl lg:w-[21ch]'>
           i’m dylan reed, a canadian

@@ -5,7 +5,7 @@ import React from 'react';
 type Props = {
   size?: string;
   icon?: string;
-  link: string;
+  link?: string;
 };
 
 const Icon = (props: Props) => {
@@ -13,7 +13,7 @@ const Icon = (props: Props) => {
     <div
       className={`relative w-${props.size} h-${props.size} hover:scale-110 rounded-full duration-200 cursor-pointer`}
     >
-      <Link href={props.link}>
+      <Link href={props.link ? props.link : ''}>
         <a>
           <Image
             src={`/${props.icon}.svg`}

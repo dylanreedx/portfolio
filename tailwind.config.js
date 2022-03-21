@@ -112,6 +112,16 @@ module.exports = {
             transform: 'translateY(-4rem)',
           },
         },
+        'bounce-horizontal': {
+          '0%, 100%': {
+            transform: 'translateX(-25%)',
+            'animation-timing-function': 'cubic-bezier(0.8,0,1,1)',
+          },
+          '50%': {
+            transform: 'none',
+            'animation-timing-function': 'cubic-bezier(0,0,0.2,1)',
+          },
+        },
       },
       animation: {
         'zoom-in': 'zoom-in 200ms ease-in-out',
@@ -126,6 +136,7 @@ module.exports = {
         'slide-up-offset': 'slide-up-offset 500ms ease',
         'slide-up-mobile-offset-details':
           'slide-up-mobile-offset-details 500ms ease',
+        'bounce-horizontal': 'bounce-horizontal 1s ease infinite',
       },
     },
     plugins: [],
