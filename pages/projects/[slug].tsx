@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const ProjectDetails = ({ project, slug }: Props) => {
   const [selectedImage, setSelectedImage] = React.useState(0);
   const { data, isLoading, error } = useQuery<ProjectType, Error>(
-    'project',
+    ['project', slug],
     () => fetchProject(slug),
     {
       initialData: project,
@@ -97,9 +97,9 @@ const ProjectDetails = ({ project, slug }: Props) => {
           {/* project main section */}
           <section className='relative overflow-hidden rounded-2xl flex w-full z-0'>
             {/* links */}
-            <div className='flex gap-2 md:gap-6 z-50 w-full p-2 md:p-6'>
+            <div className='flex flex-col md:flex-row gap-2 md:gap-6 z-50 w-full p-2 md:p-6 absolute top-5 left-5 animate-pop-up'>
               {project.liveLink && (
-                <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 ease-in-out duration-200 h-fit rounded-full'>
+                <div className='flex flex-0 items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 ease-in-out duration-200 h-fit rounded-full w-fit'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-4 w-4 stroke-primary-dark-400'
@@ -121,7 +121,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
                   </a>
                 </div>
               )}
-              <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 h-fit rounded-full'>
+              <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 h-fit rounded-full w-fit'>
                 <Icon icon='GitHub' size='4' />
                 <a
                   href={project.gitHubLink}
@@ -134,7 +134,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
             {/* image gradient */}
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary-dark-500 to-transparent z-20'></div>
             {/* project image wrapper */}
-            <div className='w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up'>
+            <div className='min-w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up flex-1'>
               <Img
                 // @ts-ignore
                 src={data.galleryImg[selectedImage]}
