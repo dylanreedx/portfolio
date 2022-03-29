@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='bg-primary-dark-500 min-h-screen p-6 md:p-16 flex flex-col gap-6 lg:p-20 overflow-hidden'>
+      <main className='bg-primary-dark-500 min-h-screen p-6 md:p-16 flex flex-col gap-6 lg:p-20 3xl:px-[72em] overflow-hidden'>
         <HeroSection />
         <ProjectSection />
       </main>

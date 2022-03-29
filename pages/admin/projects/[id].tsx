@@ -60,7 +60,7 @@ const ProjectDetails = () => {
     }
   };
   return (
-    <section>
+    <section className='3xl:px-[72em]'>
       {isLoading && <p>Loading...</p>}
       {!isLoading && !error && (
         <form

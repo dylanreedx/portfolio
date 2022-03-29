@@ -67,7 +67,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
   }, [data, selectedImage]);
 
   return (
-    <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 text-primary-dark-100'>
+    <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 3xl:px-[72em] text-primary-dark-100'>
       <Link href={'/'}>
         <a className='flex items-center mb-6 mt-2 w-fit bg-primary-dark-600 rounded-full py-2 px-8 h-fit'>
           <svg

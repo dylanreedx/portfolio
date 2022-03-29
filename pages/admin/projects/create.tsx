@@ -57,7 +57,7 @@ const Create = () => {
     }
   };
   return (
-    <section>
+    <section className='2xl:px-[72em]'>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='bg-gray-100 flex-col flex gap-2 p-12'

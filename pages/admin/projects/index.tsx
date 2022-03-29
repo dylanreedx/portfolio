@@ -43,7 +43,7 @@ const Projects = (props: Props) => {
   return typeof window !== 'undefined' &&
     localStorage.getItem('token') ===
       process.env.NEXT_PUBLIC_ADMIN_ACCESS_TOKEN ? (
-    <main>
+    <main className='3xl:px-[72em]'>
       <header className='flex justify-between items-center p-6'>
         <h1 className='text-4xl'>Projects</h1>
         <div>
