@@ -38,9 +38,20 @@ export function ProjectSection() {
   }, [projects, selectedProject]);
   return (
     <section>
-      <h2 className='text-primary-dark-100 text-3xl md:text-4xl lg:text-5xl font-bold italic py-12 md:pt-20'>
-        WORK
-      </h2>
+      <div className='flex justify-between items-center'>
+        <h2 className='text-primary-dark-100 text-3xl md:text-4xl lg:text-5xl font-bold italic py-12 md:pt-20'>
+          WORK
+        </h2>
+        {!isLoading && !error && (
+          <p className='text-[#646464] uppercase text-2xl font-medium'>
+            Project{' '}
+            <span className='bg-[#3b3b3b] leading-3 px-4 py-2 rounded-full text-[#aeaeae]'>
+              {selectedProject + 1}
+            </span>{' '}
+            of {projects?.length}
+          </p>
+        )}
+      </div>
       {isLoading && (
         <div className='grid place-items-center min-h-[20vh]'>
           <div className='loader ease-linear rounded-full border-4 border-t-4 border-primary-dark-400 h-12 w-12 mb-4'></div>
