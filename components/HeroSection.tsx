@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { IconList } from './IconList';
 export function HeroSection({}) {
+  const header = useRef<HTMLDivElement>(null);
+
+  const THRESHOLD = 5;
+
+  function handleHover(e: any) {
+    const { clientX, clientY, currentTarget } = e;
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+
+    const horizontal = (clientX - offsetLeft) / clientWidth;
+    const vertical = (clientY - offsetTop) / clientHeight;
+
+    const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+    const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+
+    /* @ts-ignore */
+    header.current.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1) scale(1.0125)`;
+  }
+
+  function resetStyles(e: any) {
+    /* @ts-ignore */
+    header.current.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+  }
+
   return (
     <section className='text-primary-dark-100 flex lg:flex-row gap-6 py-6 flex-col-reverse justify-between'>
-      <div className='flex flex-col gap-6'>
+      <div
+        className='flex flex-col gap-6 duration-500 ease-in-out animate-slide-down'
+        ref={header}
+        onMouseMove={handleHover}
+        onMouseLeave={resetStyles}
+      >
         <h1 className='uppercase font-bold text-3xl lg:text-6xl lg:w-[21ch]'>
           i’m dylan reed, a canadian
           <span className='text-primary-500 animate-to-italic inline-block skew-x-[-20deg]'>

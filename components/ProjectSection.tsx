@@ -43,7 +43,7 @@ export function ProjectSection() {
           WORK
         </h2>
         {!isLoading && !error && (
-          <p className='text-[#646464] uppercase text-2xl font-medium'>
+          <p className='text-[#646464] uppercase text-sm md:text-2xl font-medium'>
             Project{' '}
             <span className='bg-[#3b3b3b] leading-3 px-4 py-2 rounded-full text-[#aeaeae]'>
               {selectedProject + 1}

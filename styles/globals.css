@@ -25,3 +25,39 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  transition: 500ms ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.cover {
+  transition: 500ms ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 1;
+}
+
+.header {
+  transition: 500ms ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+.card:hover .bottom {
+  transform: translateZ(12px);
+}
+.card:hover .header {
+  @apply scale-[1.01];
+}
+
+@media (prefers-reduced-motion) {
+  .card {
+    transform: none !important;
+  }
+}
