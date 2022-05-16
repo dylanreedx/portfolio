@@ -167,10 +167,10 @@ const ProjectDetails = ({ project, slug }: Props) => {
             <section className='grid place-items-center'>
               <div className='grid xl:grid-flow-col gap-6 w-full'>
                 {/* @ts-ignore */}
-                {data?.galleryImg.map((img: string) => (
+                {data?.galleryImg.map((img: string, idx: number) => (
                   <div
                     className='relative w-full h-72 overflow-hidden rounded-xl'
-                    key={img}
+                    key={idx}
                   >
                     <Img src={img} alt={data.title} />
                   </div>

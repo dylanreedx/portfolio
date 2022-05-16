@@ -5,11 +5,8 @@ export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const result = await prisma.project.findMany({
-    where: {
-      slug: req.query.slug as string,
-    },
-  });
+  // find all projects
+  const projects = await prisma.project.findMany();
 
-  res.json(result);
+  res.json(projects);
 }
