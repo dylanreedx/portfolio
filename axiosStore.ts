@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 let URL =
-  process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_DEV_API_URL;
+  process.env.NEXT_PUBLIC_NODE_ENV === 'development'
+    ? process.env.NEXT_PUBLIC_DEV_API_URL
+    : `https://${process.env.VERCEL_URL}/api`;
 
 const instance = axios.create({ baseURL: URL });
 instance.interceptors.request.use((config) => {

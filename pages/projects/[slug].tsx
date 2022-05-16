@@ -22,7 +22,7 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await api.get('/project');
-  const paths = data.map((project: ProjectType) => ({
+  const paths = data?.map((project: ProjectType) => ({
     params: {
       slug: project.slug,
     },
@@ -146,7 +146,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
           <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
             {/* tech */}
             <div className='grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 md:w-1/2 xl:w-1/3 order-3 md:order-1'>
-              {data.tech.map((tech: string) => (
+              {data?.tech.map((tech: string) => (
                 <Tech key={tech} tech={tech} />
               ))}
             </div>

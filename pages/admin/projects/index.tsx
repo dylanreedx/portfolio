@@ -6,9 +6,7 @@ import { ProjectType } from 'types';
 import { useRouter } from 'next/router';
 import ProjectCard from 'components/admin/ProjectCard';
 
-type Props = {};
-
-const Projects = (props: Props) => {
+const Projects = () => {
   const router = useRouter();
   const { id } = router.query;
   const queryClient = new QueryClient();
@@ -30,7 +28,7 @@ const Projects = (props: Props) => {
     }
   );
 
-  React.useEffect(() => {
+  /*   React.useEffect(() => {
     if (
       typeof window !== 'undefined' &&
       localStorage.getItem('token') !==
@@ -38,7 +36,7 @@ const Projects = (props: Props) => {
     ) {
       router.push('/');
     }
-  });
+  }); */
 
   return typeof window !== 'undefined' &&
     localStorage.getItem('token') ===
