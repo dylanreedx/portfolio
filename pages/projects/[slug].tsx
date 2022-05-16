@@ -10,6 +10,7 @@ import Tech from 'components/Tech';
 import Img from 'components/Img';
 import Icon from 'components/Icon';
 import Link from 'next/link';
+import { useClientRouter } from 'use-client-router';
 
 type Props = {
   project: ProjectType;
@@ -20,7 +21,7 @@ interface IParams extends ParsedUrlQuery {
   slug: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+/* export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await api.get('/project');
   const paths = data?.map((project: ProjectType) => ({
     params: {
@@ -38,16 +39,18 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params as IParams;
   const project: ProjectType = await fetchProject(slug);
   return { props: { project, slug } };
-};
+}; */
 
-const ProjectDetails = ({ project, slug }: Props) => {
+const ProjectDetails = () => {
+  const router = useClientRouter();
+  const { slug } = router.query;
   const [selectedImage, setSelectedImage] = React.useState(0);
-  const { data, isLoading, error } = useQuery<ProjectType, Error>(
-    ['project', slug],
-    () => fetchProject(slug),
-    {
-      initialData: project,
-    }
+  const {
+    data: project,
+    isLoading,
+    error,
+  } = useQuery<ProjectType, Error>(['project', slug], () =>
+    fetchProject(slug as string)
   );
   const nextImage = () => {
     // @ts-ignore
@@ -64,7 +67,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
       setSelectedImage((prev) => (prev + 1) % data.galleryImg.length);
     }, 15000);
     return () => clearInterval(interval);
-  }, [data, selectedImage]);
+  }, [project, selectedImage]);
 
   return (
     <main className='bg-primary-dark-500 min-h-screen p-6 md:p-12 lg:p-16 3xl:px-[72em] text-primary-dark-100'>
@@ -92,7 +95,7 @@ const ProjectDetails = ({ project, slug }: Props) => {
           <div className='loader ease-linear rounded-full border-4 border-t-4 border-primary-dark-400 h-12 w-12 mb-4'></div>
         </div>
       )}
-      {data && (
+      {project && (
         <>
           {/* project main section */}
           <section className='relative overflow-hidden rounded-2xl flex w-full z-0'>
@@ -137,8 +140,8 @@ const ProjectDetails = ({ project, slug }: Props) => {
             <div className='min-w-full min-h-[40vh] xl:min-h-[65vh] z-10 animate-pop-up flex-1'>
               <Img
                 // @ts-ignore
-                src={data.galleryImg[selectedImage]}
-                alt={data.title}
+                src={project.galleryImg[selectedImage]}
+                alt={project.title}
                 priority
               />
             </div>
@@ -146,15 +149,15 @@ const ProjectDetails = ({ project, slug }: Props) => {
           <section className='z-50 px-6 xl:px-12 -translate-y-16 lg:-translate-y-28 flex flex-col gap-4 animate-slide-up-mobile-offset-details lg:animate-slide-up-offset'>
             {/* tech */}
             <div className='grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 md:w-1/2 xl:w-1/3 order-3 md:order-1'>
-              {data?.tech.map((tech: string) => (
+              {project?.tech.map((tech: string) => (
                 <Tech key={tech} tech={tech} />
               ))}
             </div>
             <h1 className='text-4xl md:text-5xl xl:text-7xl font-bold w-full md:w-3/4 xl:w-1/2 z-50 order-1 md:order-2'>
-              {data.title}
+              {project.title}
             </h1>
             <p className='text-primary-dark-300 lg:w-3/4 order-2 md:order-3'>
-              {data.excerpt}
+              {project.excerpt}
             </p>
           </section>
           <section className='xl:px-52 flex flex-col gap-12'>
@@ -162,17 +165,17 @@ const ProjectDetails = ({ project, slug }: Props) => {
               <h2 className='uppercase font-bold text-4xl xl:text-5xl text-center'>
                 About the Project
               </h2>
-              <p className='text-primary-dark-300'>{data.description}</p>
+              <p className='text-primary-dark-300'>{project.description}</p>
             </section>
             <section className='grid place-items-center'>
               <div className='grid xl:grid-flow-col gap-6 w-full'>
                 {/* @ts-ignore */}
-                {data?.galleryImg.map((img: string, idx: number) => (
+                {project?.galleryImg.map((img: string, idx: number) => (
                   <div
                     className='relative w-full h-72 overflow-hidden rounded-xl'
                     key={idx}
                   >
-                    <Img src={img} alt={data.title} />
+                    <Img src={img} alt={project.title} />
                   </div>
                 ))}
               </div>
