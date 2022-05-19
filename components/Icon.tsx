@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 type Props = {
@@ -13,17 +12,15 @@ const Icon = (props: Props) => {
     <div
       className={`relative w-${props.size} h-${props.size} hover:scale-110 rounded-full duration-200 cursor-pointer`}
     >
-      <Link href={props.link ? props.link : ''}>
-        <a>
-          <Image
-            src={`/${props.icon}.svg`}
-            alt='github'
-            layout='fill'
-            objectFit='cover'
-            objectPosition='center'
-          />
-        </a>
-      </Link>
+      <a href={props.link ? props.link : ''} target='_blank' rel='noreferrer'>
+        <Image
+          src={`/${props.icon}.svg`}
+          alt='github'
+          layout='fill'
+          objectFit='cover'
+          objectPosition='center'
+        />
+      </a>
     </div>
   );
 };
