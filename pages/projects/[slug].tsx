@@ -117,6 +117,8 @@ const ProjectDetails = () => {
                     />
                   </svg>
                   <a
+                    target={'_blank'}
+                    rel='noopener noreferrer'
                     href={project.liveLink}
                     className='text-xs whitespace-nowrap'
                   >
@@ -127,6 +129,8 @@ const ProjectDetails = () => {
               <div className='flex items-center gap-2 py-2 px-6 bg-primary-dark-900 hover:bg-primary-dark-500 h-fit rounded-full w-fit'>
                 <Icon icon='GitHub' size='4' />
                 <a
+                  target={'_blank'}
+                  rel='noopener noreferrer'
                   href={project.gitHubLink}
                   className='text-xs whitespace-nowrap'
                 >
