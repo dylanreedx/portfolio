@@ -1,45 +1,13 @@
-import { fetchProject, useProject } from 'hooks/useProject';
+import { fetchProject } from 'hooks/useProject';
 import React from 'react';
 import { ProjectType } from 'types';
-import api from 'axiosStore';
-import { GetStaticPaths, GetStaticProps } from 'next';
 import { useQuery } from 'react-query';
 import { ParsedUrlQuery } from 'querystring';
-import Image from 'next/image';
 import Tech from 'components/Tech';
 import Img from 'components/Img';
 import Icon from 'components/Icon';
 import Link from 'next/link';
 import { useClientRouter } from 'use-client-router';
-
-type Props = {
-  project: ProjectType;
-  slug: string;
-};
-
-interface IParams extends ParsedUrlQuery {
-  slug: string;
-}
-
-/* export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await api.get('/project');
-  const paths = data?.map((project: ProjectType) => ({
-    params: {
-      slug: project.slug,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { slug } = ctx.params as IParams;
-  const project: ProjectType = await fetchProject(slug);
-  return { props: { project, slug } };
-}; */
 
 const ProjectDetails = () => {
   const router = useClientRouter();
@@ -52,19 +20,11 @@ const ProjectDetails = () => {
   } = useQuery<ProjectType, Error>(['project', slug], () =>
     fetchProject(slug as string)
   );
-  const nextImage = () => {
-    // @ts-ignore
-    if (selectedProject === project.galleryImg.length - 1) {
-      setSelectedImage(0);
-    } else {
-      setSelectedImage(selectedImage + 1);
-    }
-  };
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       // @ts-ignore
-      setSelectedImage((prev) => (prev + 1) % data.galleryImg.length);
+      setSelectedImage((prev) => (prev + 1) % project.galleryImg.length);
     }, 15000);
     return () => clearInterval(interval);
   }, [project, selectedImage]);
@@ -95,7 +55,17 @@ const ProjectDetails = () => {
           <div className='loader ease-linear rounded-full border-4 border-t-4 border-primary-dark-400 h-12 w-12 mb-4'></div>
         </div>
       )}
-      {project && (
+      {error && (
+        <div className='grid place-items-center min-h-[20vh]'>
+          <div className='text-center text-primary-dark-100'>
+            <h1 className='text-4xl font-bold'>Error: {error.message}</h1>
+            <p className='text-lg'>
+              Sorry, we couldn&apos;t find the project you were looking for.
+            </p>
+          </div>
+        </div>
+      )}
+      {project && !error && (
         <>
           {/* project main section */}
           <section className='relative overflow-hidden rounded-2xl flex w-full z-0'>
