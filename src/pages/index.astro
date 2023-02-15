@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import SocialLink from '../components/SocialLink.astro';
+
+import work from '../utils/work.json';
+import type { Work } from '../utils/work';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const projects: Work[] = work.projects;
+---
+
+<Layout title='Dylan Reed | Software Engineer Portfolio'>
+  <main>
+    <section class='mt-12 w-full flex flex-col'>
+      <div class='flex'>
+        <div class='w-full h-48 overflow-hidden rounded-lg'>
+          <img
+            class='object-cover w-full h-full'
+            src='/assets/dylanreed.jpg'
+            alt='Dylan Reed | Software Engineer Portfolio'
+          />
+        </div>
+        <div class='px-6 flex flex-col justify-between'>
+          <div class='flex flex-col gap-2'>
+            <h1 class='text-light-500 text-4xl font-semibold'>Dylan Reed</h1>
+            <p>
+              Bringing Ideas to Life: A Full-Stack Software Engineer Who Loves
+              Learning and Solving Problems with a Smile.
+            </p>
+          </div>
+          <ul class='flex gap-4'>
+            <li>
+              <SocialLink
+                social='linkedin'
+                url='https://linkedin.com/in/devdylan'
+              />
+            </li>
+            <li>
+              <SocialLink
+                social='github'
+                url='https://github.com/carbondesigned'
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a
+        href='/about'
+        class='w-full mt-4 font-semibold text-light-400 bg-dark-400 border-[0.5px] border-dark-300 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
+        >About Me
+        <span>&rarr;</span>
+      </a>
+    </section>
+    <section class='mt-12'>
+      <SectionHeader title='Recent Work' />
+      <ul class='flex flex-col gap-4'>
+        {
+          projects.map((project: Work) => (
+            <Card
+              title={project.title}
+              description={project.description}
+              url={project.url}
+              tags={project.tags}
+            />
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>

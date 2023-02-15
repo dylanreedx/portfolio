@@ -1,0 +1,10 @@
+---
+export interface Props {
+  url: string;
+  social: string;
+}
+
+const { url, social } = Astro.props;
+---
+
+<a href={url} class='underline text-dark-200' target='_blank'>{social}</a>

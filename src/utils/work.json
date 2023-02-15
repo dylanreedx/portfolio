@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "title": "Gymlink",
+      "description": "Gymlink is a fitness social platform to find gym buddies or even dates by getting to know like-minded gym enthusiasts. A project to both express an idea as well as use new and familiar technologies to grow my skill set.",
+      "url": "https://github.com/gymlinkapp/gymlink",
+      "tags": ["React Native", "iOS", "TypeScript"]
+    },
+    {
+      "title": "Backstage Features",
+      "description": "A blog which features blog writing and interview videos provided the YouTube channel. Utilization of Next.js full capabilities by fetching data using SSR, providing the highest quality SEO. Carefully developed using TypeScript.",
+      "url": "https://backstage-features.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "SEO"]
+    },
+    {
+      "title": "Solana dApp",
+      "description": "A fascinating project to explore the Solana network and the very early tooling behind it. Built Solana programs to handle simple CRUD operations connected with an IDL file to the Next.js/TypeScript client. Tested and deployed to Solana Devnet.",
+      "url": "https://share-deso.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Solana"]
+    }
+  ]
+}

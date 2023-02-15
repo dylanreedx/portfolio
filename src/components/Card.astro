@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  url: string;
+}
+
+const { url, title, description, tags } = Astro.props;
+---
+
+<li
+  class='border-[0.5px] border-transparent rounded-xl p-4 transition-all ease-in-out duration-500 hover:border-dark-200 hover:scale-[1.02] hover:bg-dark-400'
+>
+  <a href={url} target='_blank'>
+    <h2 class='text-2xl font-semibold'>
+      {title}
+    </h2>
+    <p class='text-sm truncate'>
+      {description}
+    </p>
+    <p
+      class='px-4 py-1 mt-2 text-xs bg-dark-400 text-dark-200 max-w-fit rounded-full'
+    >
+      View
+      <span>&rarr;</span>
+    </p>
+  </a>
+</li>
