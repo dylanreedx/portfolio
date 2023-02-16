@@ -33,22 +33,21 @@ export function HeroSection({}) {
         onMouseLeave={resetStyles}
       >
         <h1 className='uppercase font-bold text-3xl lg:text-6xl lg:w-[21ch]'>
-          i’m dylan reed, a canadian
+          Bringing Ideas to Life: A Full-Stack Software Engineer Who Loves
           <span className='text-primary-500 animate-to-italic inline-block skew-x-[-20deg]'>
-            software engineer
+            learning
           </span>
-          . passion to learn and critical to provide a
+          and solving Problems with a{' '}
           <div className='text-primary-500 animate-to-italic inline-block skew-x-[-20deg]'>
-            great ux
+            smile
           </div>
           .
         </h1>
         <p className='lg:w-[72ch] text-primary-dark-300'>
-          Hi, my name is Dylan, and I am looking to advance myself further with
-          both experience and into the industry. I have a deep passion to create
-          and learn with modern technologies such as a few examples, TypeScript,
-          React, NodeJS, GraphQL and other tooling that provides great DX while
-          providing amazing UX as well.
+          Hi, I&apos;m a highly motivated and adaptable software engineer with
+          experience in developing and implementing software solutions for
+          various organizations. I have a passion for using technology to create
+          innovative and impactful products that improve people&apos;s lives.
         </p>
       </div>
       <IconList />
