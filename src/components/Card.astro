@@ -10,8 +10,12 @@ const { url, title, description, tags } = Astro.props;
 ---
 
 <li
-  class='border-[0.5px] border-transparent rounded-xl p-4 transition-all ease-in-out duration-500 hover:border-dark-200 hover:scale-[1.02] hover:bg-dark-400'
+  class='border-[0.5px] border-transparent rounded-xl p-4 transition-all ease-in-out duration-500 hover:border-dark-200 hover:scale-[1.02] hover:bg-dark-400 relative'
 >
+  <div
+    class='w-[1.5px] rounded-full h-full absolute bg-light-400 -left-4 top-0'
+  >
+  </div>
   <a href={url} target='_blank'>
     <h2 class='text-2xl font-semibold'>
       {title}
