@@ -13,10 +13,22 @@
       "tags": ["Next.js", "TypeScript", "SEO"]
     },
     {
+      "title": "City Cyclery",
+      "description": "A website displaying products and services for a local bike shop. Built with Next.js and Tailwind CSS. Deployed to Vercel.",
+      "url": "https://share-deso.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind"]
+    },
+    {
       "title": "Solana dApp",
       "description": "A fascinating project to explore the Solana network and the very early tooling behind it. Built Solana programs to handle simple CRUD operations connected with an IDL file to the Next.js/TypeScript client. Tested and deployed to Solana Devnet.",
       "url": "https://share-deso.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Solana"]
+    },
+    {
+      "title": "NoBlockage",
+      "description": "A lightweight chrome extention to bypass paywalls using the 12ft.io URL proxy.",
+      "url": "https://github.com/carbondesigned/NoBlockage",
+      "tags": ["JavaScript"]
     }
   ]
 }
