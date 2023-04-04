@@ -14,7 +14,11 @@ const projects: Work[] = work.projects;
   <main>
     <section class='mt-12 w-full flex flex-col'>
       <div class='flex flex-col md:flex-row'>
-        <div class='w-full h-72 md:h-48 overflow-hidden rounded-lg'>
+        <div class='w-full h-72 md:h-60 overflow-hidden relative rounded-lg'>
+          <img
+            src='/assets/bg.png'
+            class='object-cover w-full h-full opacity-100 bg-dark-400 mix-blend-lighten dodge absolute inset-0'
+          />
           <img
             class='object-cover w-full h-full'
             src='/assets/dylanreed.jpg'
@@ -24,11 +28,17 @@ const projects: Work[] = work.projects;
         <div class='py-4 md:py-0 md:px-6 flex flex-col justify-between'>
           <div class='flex flex-col gap-2'>
             <h1 class='text-light-500 text-4xl font-semibold'>Dylan Reed</h1>
-            <p class='text-sm'>
+            <p class='text-sm md:text-xl'>
               Bringing Ideas to Life: A Full-Stack Software Engineer Who Loves
               Learning and Solving Problems with a Smile.
             </p>
           </div>
+          <a
+            href='/about'
+            class='w-full font-semibold text-light-400 bg-dark-400 border-[0.5px] border-dark-300 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
+            >About Me
+            <span>&rarr;</span>
+          </a>
           <ul class='flex gap-4'>
             <li>
               <SocialLink
@@ -45,16 +55,10 @@ const projects: Work[] = work.projects;
           </ul>
         </div>
       </div>
-      <a
-        href='/about'
-        class='w-full mt-4 font-semibold text-light-400 bg-dark-400 border-[0.5px] border-dark-300 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
-        >About Me
-        <span>&rarr;</span>
-      </a>
     </section>
     <section class='mt-12'>
       <SectionHeader title='Recent Work' />
-      <ul class='flex flex-col gap-4 px-4 md:px-0'>
+      <ul class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {
           projects.map((project: Work) => (
             <Card
