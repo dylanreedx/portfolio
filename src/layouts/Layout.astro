@@ -5,7 +5,7 @@ export interface Props {
   title: string;
 }
 
-const { title } = Astro.props;
+const {title} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,19 +17,23 @@ const { title } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='max-w-4xl mx-auto px-4'>
+
+  <body
+    class='max-w-4xl mx-auto px-4 min-h-screen flex flex-col justify-between relative z-10'
+  >
     <slot />
+
+    <Footer />
   </body>
 
-  <Footer />
+  <style is:global>
+    html {
+      font-family: system-ui, sans-serif;
+      @apply bg-light-500 text-light-400 bg-[url("/assets/glow-overlay.webp")] bg-no-repeat bg-cover relative;
+    }
+    code {
+      font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+  </style>
 </html>
-<style is:global>
-  html {
-    font-family: system-ui, sans-serif;
-    @apply bg-dark-500 text-light-400 bg-[url("/assets/bg.png")] bg-no-repeat bg-cover;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-</style>

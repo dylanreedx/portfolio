@@ -4,7 +4,7 @@ import Card from '../components/Card.astro';
 import SocialLink from '../components/SocialLink.astro';
 
 import work from '../utils/work.json';
-import type { Work } from '../utils/work';
+import type {Work} from '../utils/work';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const projects: Work[] = work.projects;
@@ -14,10 +14,12 @@ const projects: Work[] = work.projects;
   <main>
     <section class='mt-12 w-full flex flex-col'>
       <div class='flex flex-col md:flex-row'>
-        <div class='w-full h-72 md:h-60 overflow-hidden relative rounded-lg'>
+        <div
+          class='w-full h-72 md:h-60 overflow-hidden relative rounded-lg backdrop-blur-xl'
+        >
           <img
-            src='/assets/bg.png'
-            class='object-cover w-full h-full opacity-100 bg-dark-400 mix-blend-lighten dodge absolute inset-0'
+            src='/assets/glow-overlay-sm.webp'
+            class='object-cover w-full h-full opacity-100 bg-dark-400 mix-blend-screen absolute inset-0'
           />
           <img
             class='object-cover w-full h-full'
@@ -27,15 +29,15 @@ const projects: Work[] = work.projects;
         </div>
         <div class='py-4 md:py-0 md:px-6 flex flex-col justify-between'>
           <div class='flex flex-col gap-2'>
-            <h1 class='text-light-500 text-4xl font-semibold'>Dylan Reed</h1>
-            <p class='text-sm md:text-xl'>
+            <h1 class='text-dark-500 text-4xl font-semibold'>Dylan Reed</h1>
+            <p class='text-sm md:text-xl text-dark-100'>
               Bringing Ideas to Life: A Full-Stack Software Engineer Who Loves
               Learning and Solving Problems with a Smile.
             </p>
           </div>
           <a
             href='/about'
-            class='w-full font-semibold text-light-400 bg-dark-400 border-[0.5px] border-dark-300 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
+            class='w-full font-semibold text-dark-100 bg-light-500 border-[0.5px] border-light-400/25 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
             >About Me
             <span>&rarr;</span>
           </a>
