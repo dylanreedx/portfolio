@@ -1,10 +1,14 @@
 ---
 export interface Props {
   url: string;
-  social: string;
+  icon: string;
 }
 
-const {url, social} = Astro.props;
+const {url, icon} = Astro.props;
 ---
 
-<a href={url} class='underline text-dark-100' target='_blank'>{social}</a>
+<a
+  href={url}
+  class='text-stone-200 text-xl hover:bg-stone-400/15 p-2 rounded-lg w-10 h-6 ease-in-out duration-100'
+  target='_blank'><i class={icon}></i></a
+>

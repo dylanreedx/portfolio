@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {Image} from 'astro:assets';
 import Card from '../components/Card.astro';
 import SocialLink from '../components/SocialLink.astro';
 
@@ -12,61 +13,90 @@ const projects: Work[] = work.projects;
 
 <Layout title='Dylan Reed | Software Engineer Portfolio'>
   <main>
-    <section class='mt-12 w-full flex flex-col'>
+    <section class='md:mt-12 w-full flex flex-col'>
       <div class='flex flex-col md:flex-row'>
-        <div
-          class='w-full h-72 md:h-60 overflow-hidden relative rounded-lg backdrop-blur-xl'
-        >
-          <img
-            src='/assets/glow-overlay-sm.webp'
-            class='object-cover w-full h-full opacity-100 bg-dark-400 mix-blend-screen absolute inset-0'
-          />
-          <img
-            class='object-cover w-full h-full'
-            src='/assets/dylanreed.jpg'
-            alt='Dylan Reed | Software Engineer Portfolio'
-          />
-        </div>
-        <div class='py-4 md:py-0 md:px-6 flex flex-col justify-between'>
+        <div class='py-4 md:py-0 flex flex-col justify-between w-full'>
+          <div class='h-80 overflow-hidden rounded-lg w-full mb-4'>
+            <Image
+              src='/assets/dyl_work.jpg'
+              alt='Building and grinding in SF.'
+              class='object-cover w-full h-full object-bottom'
+              width={500}
+              height={500}
+            />
+          </div>
           <div class='flex flex-col gap-2'>
-            <h1 class='text-dark-500 text-4xl font-semibold'>
-              👋 Hey! I'm Dylan.
-            </h1>
-            <p class='text-sm md:text-xl text-dark-100'>
+            <div class='flex flex-col gap-2'>
+              <ul class='flex flex-1'>
+                <li>
+                  <SocialLink
+                    icon='ph-fill ph-linkedin-logo'
+                    url='https://linkedin.com/in/dylanreedx'
+                  />
+                </li>
+                <li>
+                  <SocialLink
+                    icon='ph-fill ph-twitter-logo'
+                    url='https://twitter.com/dylanreedx'
+                  />
+                </li>
+                <li>
+                  <SocialLink
+                    icon='ph-fill ph-github-logo'
+                    url='https://github.com/carbondesigned'
+                  />
+                </li>
+              </ul>
+              <h1 class='text-stone-100 text-4xl font-semibold'>
+                👋 Hey! I'm Dylan.
+              </h1>
+            </div>
+            <p class='text-sm md:text-xl text-stone-400'>
               I'm a software engineer based in Canada. I love building &
-              learning new things. I'm currently building Gymlink!
+              learning.
             </p>
           </div>
+
           <a
             href='/about'
-            class='w-full font-semibold text-dark-100 bg-light-500 border-[0.5px] border-light-400/25 p-4 rounded-xl hover:bg-transparent transition-all ease-in-out duration-500'
+            class='flex flex-1 justify-center gap-6 font-semibold text-stone-100 mt-4 border-[0.5px] border-stone-400/25 p-4 rounded-xl hover:bg-stone-600/15 transition-all ease-in-out duration-100'
             >About Me
             <span>&rarr;</span>
           </a>
-          <ul class='flex gap-4'>
-            <li>
-              <SocialLink
-                social='linkedin'
-                url='https://linkedin.com/in/dylanreedx'
-              />
-            </li>
-            <li>
-              <SocialLink
-                social='twitter'
-                url='https://twitter.com/dylanreedx'
-              />
-            </li>
-            <li>
-              <SocialLink
-                social='github'
-                url='https://github.com/carbondesigned'
-              />
-            </li>
-          </ul>
         </div>
       </div>
     </section>
-    <section class='mt-12'>
+    <section class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-12'>
+      <Image
+        src='/assets/kah_dyl2.jpg'
+        alt='Coworking in SF.'
+        class='rounded-lg col-span-1 object-cover h-full'
+        width={500}
+        height={500}
+      />
+      <Image
+        src='/assets/kah_dyl1.jpg'
+        alt='Building in SF.'
+        class='col-span-1 rounded-lg'
+        width={500}
+        height={500}
+      />
+      <Image
+        src='/assets/dyl_smile.jpg'
+        alt='Building in SF pt.2.'
+        class='col-span-1 rounded-lg'
+        width={500}
+        height={500}
+      />
+      <Image
+        src='/assets/kah_dyl3.jpg'
+        alt='Presenting Gymlink in SF.'
+        class='col-span-1 rounded-lg h-full object-cover'
+        width={500}
+        height={500}
+      />
+    </section>
+    <section class='my-12'>
       <SectionHeader title='Recent Work' />
       <ul class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {
