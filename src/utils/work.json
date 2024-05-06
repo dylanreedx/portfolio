@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "title": "Latent",
+      "description": "Learn and study better with AI and science.",
+      "url": "https://latentapp.vercel.app",
+      "tags": ["RAG", "TypeScript", "Next.js", "Tailwind", "langchain"]
+    },
+    {
       "title": "Gymlink",
       "description": "Gymlink is a platform to help find friends based on your gym community.",
       "url": "https://gymlink.app",
@@ -17,13 +23,6 @@
       "description": "A website displaying products and services for a local bike shop. Built with Next.js and Tailwind CSS. Deployed to Vercel.",
       "url": "https://city-cyclery.vercel.app",
       "tags": ["Next.js", "TypeScript", "Tailwind"]
-    },
-
-    {
-      "title": "Backstage Features",
-      "description": "Utilizing Next.js and the full capabilities by fetching data using SSR, providing the highest quality SEO.",
-      "url": "https://backstage-features.vercel.app/",
-      "tags": ["Next.js", "TypeScript", "SEO"]
     },
     {
       "title": "Solana dApp",
