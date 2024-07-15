@@ -5,6 +5,7 @@ import Card from '../components/Card.astro';
 import SocialLink from '../components/SocialLink.astro';
 
 import work from '../utils/work.json';
+import videos from '../utils/videos.json';
 import type {Work} from '../utils/work';
 import SectionHeader from '../components/SectionHeader.astro';
 
@@ -72,35 +73,50 @@ const projects: Work[] = work.projects;
         </div>
       </div>
     </section>
-    <section class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-12'>
+
+    <section class='grid grid-cols-2 grid-rows-2 gap-4 mt-12'>
       <Image
         src='/assets/kah_dyl2.jpg'
         alt='Coworking in SF.'
-        class='rounded-lg col-span-1 object-cover h-full'
+        class='rounded-lg col-span-2 row-span-1 object-cover h-full w-full'
         width={500}
         height={500}
       />
       <Image
         src='/assets/kah_dyl1.jpg'
         alt='Building in SF.'
-        class='col-span-1 rounded-lg'
+        class='rounded-lg col-span-1 row-span-1 object-cover h-full w-full'
         width={500}
         height={500}
       />
       <Image
         src='/assets/dyl_smile.jpg'
         alt='Building in SF pt.2.'
-        class='col-span-1 rounded-lg'
+        class='rounded-lg col-span-1 row-span-2 object-cover h-full w-full'
         width={500}
         height={500}
       />
       <Image
         src='/assets/kah_dyl3.jpg'
         alt='Presenting Gymlink in SF.'
-        class='col-span-1 rounded-lg h-full object-cover'
+        class='rounded-lg col-span-2 row-span-1 object-cover h-full w-full'
         width={500}
         height={500}
       />
+    </section>
+
+    <section class='my-12'>
+      <SectionHeader title='Fun Content Stuff' />
+      <ul class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        {
+          videos.map((video) => (
+            <div
+              class='*:rounded-xl *:border-[0.5px] *:border-stone-400/25'
+              set:html={video.embed}
+            />
+          ))
+        }
+      </ul>
     </section>
     <section class='my-12'>
       <SectionHeader title='Recent Work' />
