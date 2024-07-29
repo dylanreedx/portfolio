@@ -4,9 +4,10 @@ export interface Props {
   description: string;
   tags: string[];
   url: string;
+  wip?: boolean;
 }
 
-const {url, title, description, tags} = Astro.props;
+const {url, title, description, tags, wip} = Astro.props;
 
 // random scale between 1 and 1.3
 const scale = Math.random() * 0.3 + 1;
@@ -16,9 +17,18 @@ const scale = Math.random() * 0.3 + 1;
   class='rounded-xl p-4 transition-all bg-stone-950 text-white ease-in-out duration-100 hover:bg-stone-200/10 backdrop-blur-md relative overflow-hidden border-[0.5px] border-stone-400/25 flex flex-col justify-between cursor-pointer'
 >
   <div class='z-50'>
-    <h2 class='text-3xl font-semibold mb-1'>
-      {title}
-    </h2>
+    <div class='flex items-center gap-2'>
+      <h2 class='text-3xl font-semibold mb-1'>
+        {title}
+      </h2>
+      {
+        wip && (
+          <p class='px-4 py-1 text-xs bg-light-500 text-dark-100 border-stone-400/25 border-[0.5px] rounded-full '>
+            WIP
+          </p>
+        )
+      }
+    </div>
     <p class='text-sm text-stone-400'>
       {description}
     </p>

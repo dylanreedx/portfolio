@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "Streamcharts",
+      "description": "Create a leaderboard and track the amount of hours streamed by your favorite Twitch streamers.",
+      "url": "https://streamcharts.vercel.app",
+      "wip": true,
+      "tags": ["Svelte", "TypeScript", "Tailwind", "Framer Motion"]
+    },
+    {
       "title": "Latent",
       "description": "Learn and study better with AI and science.",
       "url": "https://latentapp.vercel.app",

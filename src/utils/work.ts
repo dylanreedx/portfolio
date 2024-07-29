@@ -3,4 +3,5 @@ export interface Work {
   description: string;
   tags: string[];
   url: string;
+  wip?: boolean;
 }
