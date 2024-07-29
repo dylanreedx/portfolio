@@ -4,7 +4,6 @@
       "title": "Streamcharts",
       "description": "Create a leaderboard and track the amount of hours streamed by your favorite Twitch streamers.",
       "url": "https://streamcharts.vercel.app",
-      "wip": true,
       "tags": ["Svelte", "TypeScript", "Tailwind", "Framer Motion"]
     },
     {
