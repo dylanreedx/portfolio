@@ -15,7 +15,7 @@
     {
       "title": "Gymlink",
       "description": "Gymlink is a platform to help find friends based on your gym community.",
-      "url": "https://gymlink.app",
+      "url": "gymlink-app.vercel.app",
       "tags": ["React Native", "Expo", "Firebase", "TypeScript"]
     },
     {
