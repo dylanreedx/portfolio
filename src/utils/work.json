@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "title": "Active Study - Winhacks 2025",
+      "description": "Text 346-550-7810 and use convenient active recall to prepare for your next test.",
+      "url": "https://active-study.vercel.app",
+      "tags": ["TypeScript", "Twilio", "OpenAI API", "Next.js", "Tailwind", "Docker"]
+    },
+    {
       "title": "Streamcharts",
       "description": "Create a leaderboard and track the amount of hours streamed by your favorite Twitch streamers.",
       "url": "https://streamcharts.vercel.app",
