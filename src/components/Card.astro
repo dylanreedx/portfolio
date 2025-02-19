@@ -32,10 +32,10 @@ const scale = Math.random() * 0.3 + 1;
     <p class='text-sm text-stone-400'>
       {description}
     </p>
-    <ul class='flex gap-2'>
+    <ul class='flex gap-2 flex-wrap'>
       {
         tags.map((tag) => (
-          <li class='px-2 py-1 mt-2 text-xs bg-transparent text-stone-400 border-stone-600/25 border-[0.5px] max-w-fit rounded-full'>
+          <li class='px-2 py-1 mt-2 text-xs bg-transparent text-stone-400 border-stone-600/25 border-[0.5px] max-w-fit rounded-full text-nowrap'>
             {tag}
           </li>
         ))
