@@ -27,7 +27,7 @@
     {
       "title": "VocabAI",
       "description": "An app to help build your vocabulary using AI.",
-      "url": "https://github.com/carbondesigned/vocab-ai",
+      "url": "https://github.com/dylanreedx/vocab-ai",
       "tags": ["GPT-4", "Next.js", "TypeScript", "Tailwind"]
     },
     {
@@ -45,7 +45,7 @@
     {
       "title": "NoBlockage",
       "description": "A lightweight chrome extention to bypass paywalls using the 12ft.io URL proxy.",
-      "url": "https://github.com/carbondesigned/NoBlockage",
+      "url": "https://github.com/dylanreedx/NoBlockage",
       "tags": ["JavaScript"]
     }
   ]
